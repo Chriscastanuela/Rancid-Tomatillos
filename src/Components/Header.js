@@ -6,7 +6,7 @@ export class Header extends Component {
         return (
             <section style={sectionStyle}>
                 <h1 className="Header" style={headerStyle}>Rancid Tomatillos</h1>
-                <a className="Login" style={loginStyle}>Login</a>
+                <a className="User" style={userStyle}>User</a>
             </section>
         )
     }
@@ -31,14 +31,15 @@ const headerStyle = {
     marginLeft: '10%'
 }
 
-const loginStyle = {
+const userStyle = {
     fontFamily: 'Open Sans, sans-serif',
     fontWeight: 'bold',
     fontSize: '20px',
     gridColumn: '2',
     textAlign: 'right',
     marginRight: '30%',
-    alignSelf: 'center'
+    alignSelf: 'center',
+    cursor: 'pointer'
 }
 
 export default Header
