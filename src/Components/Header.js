@@ -26,7 +26,13 @@ export class Header extends Component {
 
 const sectionStyle = {
     display: 'grid',
-    gridTemplateColumns: '1fr 1fr'
+    gridTemplateColumns: '1fr 1fr',
+    borderStyle: 'solid',
+    borderLeft: 'none',
+    borderRight: 'none',
+    borderTop: 'none',
+    borderWidth: '1px',
+    backgroundColor: '#fa5252'
 }
 
 const headerStyle = {
