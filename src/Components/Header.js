@@ -38,6 +38,9 @@ const headerStyle = {
 }
 
 const loginStyle = {
+    fontFamily: 'Open Sans, sans-serif',
+    fontWeight: 'bold',
+    fontSize: '20px',
     gridColumn: '2',
     textAlign: 'right',
     marginRight: '30%',
