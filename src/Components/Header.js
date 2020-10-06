@@ -10,19 +10,36 @@ export class Header extends Component {
         return (
             <section style={sectionStyle}>
                 <h1 className="Header" style={headerStyle}>Rancid Tomatillos</h1>
-                <a className="Login">Login</a>
+                <a className="Login" style={loginStyle}>Login</a>
             </section>
+        )
+    }
+    
+    formatUser() {
+        const { username } = this.username;
+        return (
+        
+        <p>{}</p>
         )
     }
 }
 
 const sectionStyle = {
     display: 'grid',
-    gridTemplateColumns: '3fr 1fr 1fr 1fr 1fr 1fr'
+    gridTemplateColumns: '1fr 1fr'
 }
 
 const headerStyle = {
-    gridColumn: '1'
+    gridColumn: '1',
+    textAlign: 'left',
+    marginLeft: '10%'
+}
+
+const loginStyle = {
+    gridColumn: '2',
+    textAlign: 'right',
+    marginRight: '30%',
+    alignSelf: 'center'
 }
 
 export default Header
