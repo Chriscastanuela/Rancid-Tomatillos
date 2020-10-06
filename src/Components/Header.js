@@ -30,6 +30,8 @@ const sectionStyle = {
 }
 
 const headerStyle = {
+    fontFamily: 'Kaushan Script, cursive',
+    fontSize: '30px',
     gridColumn: '1',
     textAlign: 'left',
     marginLeft: '10%'
