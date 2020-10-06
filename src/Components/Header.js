@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import userIcon from '../Assets/user.png'
 
 export class Header extends Component {
 
@@ -6,7 +7,10 @@ export class Header extends Component {
         return (
             <section style={sectionStyle}>
                 <h1 className="Header" style={headerStyle}>Rancid Tomatillos</h1>
-                <a className="User" style={userStyle}>User</a>
+                <div className="UserNameAndIcon" style={userNameAndIconStyle}>
+                    <img src={userIcon} alt="User Icon" style={userIconStyle}/>
+                    <a className="User" style={userStyle}>FirstName</a>
+                </div>
             </section>
         )
     }
@@ -31,15 +35,29 @@ const headerStyle = {
     marginLeft: '10%'
 }
 
+const userNameAndIconStyle = {
+    // marginRight: '30%',
+    textAlign: 'right',
+    marginTop: '10px',
+    marginRight: '35px',
+    display: 'grid',
+}
+
 const userStyle = {
     fontFamily: 'Open Sans, sans-serif',
     fontWeight: 'bold',
     fontSize: '20px',
     gridColumn: '2',
-    textAlign: 'right',
-    marginRight: '30%',
-    alignSelf: 'center',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    // marginRight: '20px'
+}
+
+const userIconStyle = {
+    gridColumn: '2',
+    width: '50px',
+    height: '50px',
+    justifySelf: 'right',
+    // alignSelf: 'center',
 }
 
 export default Header
