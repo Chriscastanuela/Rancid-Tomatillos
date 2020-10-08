@@ -1,9 +1,90 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function Main() {
-  return (
-    <div>
-      
-    </div>
-  )
+export class Main extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      data: '',
+      latestMovies: [],
+      lowestRated: [],
+      highestRated: [],
+      movieData: {}
+    };
+  }
+
+  componentDidMount() {
+    Promise.all([
+      fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+        .then(response => response.json())
+        .then(response => this.setState({movieData: response}))
+        .catch(err => alert('Data failed to load. Try again later', err))
+    ])
+    .then(promiseDotAllIndex => {
+      console.log(this.state.movieData);
+      this.getRecentMovies();
+    })
+  }
+
+  getRecentMovies() {
+    console.log('I exist, am I before or after?')
+    let lastTen = [];
+    this.state.movieData.movies.sort((a,b) => {
+      return b.release_date - a.release_date;
+    }).forEach(index => {
+      if (lastTen && lastTen.length < 10) {
+        lastTen.push(index);
+      }
+    })
+    this.setState({latestMovies: lastTen})
+    console.log(this.state.latestMovies)
+  }
+
+    // let sortByAvgRatingAscending;
+    // fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    //     .then(response => response.json())
+    //     .then(response => (
+    //       sortByAvgRatingAscending = response.sort((a,b) => {
+    //         return a.average_rating - b.average_rating;
+    //       })
+    //     ))
+    //     .catch(err => alert('Data failed to load. Try again later', err));
+    // let bottomTen = [];
+    // sortByAvgRatingAscending.forEach(index => {
+    //   if (bottomTen.length < 10) {
+    //     bottomTen.push(index);
+    //   }
+    // });
+    // this.setState({lowestRated: bottomTen});
+    // console.log(this.state.lowestRated);
+
+
+    // let sortByAvgRatingDescending;
+    // fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    //     .then(response => response.json())
+    //     .then(response => (
+    //       sortByAvgRatingAscending = response.sort((a,b) => {
+    //         return b.average_rating - a.average_rating;
+    //       })
+    //     ))
+    //     .catch(err => alert('Data failed to load. Try again later', err));
+    // let topTen = [];
+    // sortByAvgRatingAscending.forEach(index => {
+    //   if (topTen.length < 10) {
+    //     topTen.push(index);
+    //   }
+    // });
+    // this.setState({highestRated: topTen});
+    // console.log(this.state.highestRated);
+
+  render() {
+    return (
+      <section>
+        <p>Let's check the console</p>
+      </section>
+    )
+  }
 }
+
+
+export default Main
