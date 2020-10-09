@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import Lists from './Lists';
+import ListSection from './ListSection';
 
 export default function Main() {
   return (
     <section style={mainSectionStyle}>
-      <Lists />
+      <ListSection />
       {/* <SearchFormAndMoviePosters /> */}
     </section>
   )
