@@ -24,6 +24,7 @@ export class Main extends Component {
       console.log(this.state.movieData);
       this.getRecentMovies();
       this.getLowestRated();
+      this.getHighestRated();
     })
   }
 
@@ -54,24 +55,18 @@ export class Main extends Component {
     console.log(this.state.lowestRated);
   }
 
-
-    // let sortByAvgRatingDescending;
-    // fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-    //     .then(response => response.json())
-    //     .then(response => (
-    //       sortByAvgRatingAscending = response.sort((a,b) => {
-    //         return b.average_rating - a.average_rating;
-    //       })
-    //     ))
-    //     .catch(err => alert('Data failed to load. Try again later', err));
-    // let topTen = [];
-    // sortByAvgRatingAscending.forEach(index => {
-    //   if (topTen.length < 10) {
-    //     topTen.push(index);
-    //   }
-    // });
-    // this.setState({highestRated: topTen});
-    // console.log(this.state.highestRated);
+    getHighestRated() {
+      let topTen = [];
+      this.state.movieData.movies.sort((a,b) => {
+        return b.average_rating - a.average_rating;
+      }).forEach(index => {
+        if (topTen.length < 10) {
+          topTen.push(index);
+        }
+      });
+      this.setState({highestRated: topTen});
+      console.log(this.state.highestRated);
+    }
 
   render() {
     return (
