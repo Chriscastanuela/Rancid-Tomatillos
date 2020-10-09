@@ -23,6 +23,7 @@ export class Main extends Component {
     .then(promiseDotAllIndex => {
       console.log(this.state.movieData);
       this.getRecentMovies();
+      this.getLowestRated();
     })
   }
 
@@ -40,23 +41,18 @@ export class Main extends Component {
     console.log(this.state.latestMovies)
   }
 
-    // let sortByAvgRatingAscending;
-    // fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-    //     .then(response => response.json())
-    //     .then(response => (
-    //       sortByAvgRatingAscending = response.sort((a,b) => {
-    //         return a.average_rating - b.average_rating;
-    //       })
-    //     ))
-    //     .catch(err => alert('Data failed to load. Try again later', err));
-    // let bottomTen = [];
-    // sortByAvgRatingAscending.forEach(index => {
-    //   if (bottomTen.length < 10) {
-    //     bottomTen.push(index);
-    //   }
-    // });
-    // this.setState({lowestRated: bottomTen});
-    // console.log(this.state.lowestRated);
+  getLowestRated() {
+    let bottomTen = [];
+    this.state.movieData.movies.sort((a,b) => {
+      return a.average_rating - b.average_rating;
+    }).forEach(index => {
+    if (bottomTen.length < 10) {
+      bottomTen.push(index);
+    }
+    });
+    this.setState({lowestRated: bottomTen});
+    console.log(this.state.lowestRated);
+  }
 
 
     // let sortByAvgRatingDescending;
