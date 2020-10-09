@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Lists from './Lists';
 
 export class Main extends Component {
 
@@ -54,11 +55,17 @@ export class Main extends Component {
 
   render() {
     return (
-      <section>
-        <p>Let's check the console</p>
+      <section style={mainSectionStyle}>
+        <Lists />
+        {/* <SearchFormAndMoviePosters /> */}
       </section>
     )
   }
+}
+
+let mainSectionStyle = {
+  display: 'grid',
+  gridTemplateRows: '1fr 1fr'
 }
 
 export default Main
