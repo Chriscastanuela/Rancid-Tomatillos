@@ -6,10 +6,10 @@ export class Main extends Component {
     super();
     this.state = {
       data: '',
-      latestMovies: [],
+      recentMovies: [],
       lowestRated: [],
       highestRated: [],
-      movieData: {}
+      movieData: {},
     };
   }
 
@@ -22,51 +22,35 @@ export class Main extends Component {
     ])
     .then(promiseDotAllIndex => {
       console.log(this.state.movieData);
-      this.getRecentMovies();
-      this.getLowestRated();
-      this.getHighestRated();
+      this.getAList((
+        this.state.movieData.movies.sort((a,b) => {
+          return b.release_date - a.release_date;
+        })
+      ), this.recentMovies);
+      this.getAList((
+        this.state.movieData.movies.sort((a,b) => {
+          return a.average_rating - b.average_rating;
+        })
+      ), this.lowestRated);
+      this.getAList((
+        this.state.movieData.movies.sort((a,b) => {
+          return b.average_rating - a.average_rating;
+        })
+      ), this.highestRated)
     })
   }
 
-  getRecentMovies() {
+  getAList(theList, theKey) {
     console.log('I exist, am I before or after?')
-    let lastTen = [];
-    this.state.movieData.movies.sort((a,b) => {
-      return b.release_date - a.release_date;
-    }).forEach(index => {
-      if (lastTen && lastTen.length < 10) {
-        lastTen.push(index);
+    let theTen = [];
+    theList.forEach(index => {
+      if (theTen.length < 10) {
+        theTen.push(index);
       }
     })
-    this.setState({latestMovies: lastTen})
-    console.log(this.state.latestMovies)
+    this.setState({theKey: theTen})
+    console.log(this.state.theKey, 'asdfsafdfasfdafa')
   }
-
-  getLowestRated() {
-    let bottomTen = [];
-    this.state.movieData.movies.sort((a,b) => {
-      return a.average_rating - b.average_rating;
-    }).forEach(index => {
-    if (bottomTen.length < 10) {
-      bottomTen.push(index);
-    }
-    });
-    this.setState({lowestRated: bottomTen});
-    console.log(this.state.lowestRated);
-  }
-
-    getHighestRated() {
-      let topTen = [];
-      this.state.movieData.movies.sort((a,b) => {
-        return b.average_rating - a.average_rating;
-      }).forEach(index => {
-        if (topTen.length < 10) {
-          topTen.push(index);
-        }
-      });
-      this.setState({highestRated: topTen});
-      console.log(this.state.highestRated);
-    }
 
   render() {
     return (
@@ -77,5 +61,27 @@ export class Main extends Component {
   }
 }
 
-
 export default Main
+// getRecentMovies() {
+  //   console.log('I exist, am I before or after?')
+  //   let lastTen = [];
+  //   this.state.movieData.movies.sort((a,b) => {
+  //     return b.release_date - a.release_date;
+  //   }).forEach(index => {
+  //     if (lastTen && lastTen.length < 10) {
+  //       lastTen.push(index);
+  //     }
+  //   })
+  //   this.setState({latestMovies: lastTen})
+  //   console.log(this.state.latestMovies)
+  // }
+  // getLowestRated() {
+  //   let bottomTen = [];
+  //   .forEach(index => {
+  //   if (bottomTen.length < 10) {
+  //     bottomTen.push(index);
+  //   }
+  //   });
+  //   this.setState({: bottomTen});
+  //   console.log(this.state.lowestRated);
+  // }

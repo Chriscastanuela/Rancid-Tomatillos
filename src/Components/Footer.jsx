@@ -14,7 +14,7 @@ const sectionStyle = {
     borderStyle: 'solid',
     borderLeft: 'none',
     borderRight: 'none',
-    borderTop: 'none',
+    borderBottom: 'none',
     borderWidth: '1px',
     backgroundColor: '#fa5252'
 }
