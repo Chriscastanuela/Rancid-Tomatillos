@@ -1,10 +1,18 @@
 import React, { Component } from 'react'
 
 export class List extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          list: props
+        };
+    }
+
     render() {
         return (
             <div style={listStyle}>
-                
+                {console.log(this.state.list)}
+                <p>{this.props.list}</p>
             </div>
         )
     }

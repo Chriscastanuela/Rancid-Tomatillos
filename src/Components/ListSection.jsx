@@ -17,7 +17,11 @@ export class ListSection extends Component {
         Promise.all([
             fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
             .then(response => response.json())
-            .then(response => this.setState({movieData: response}))
+            .then(response => {
+                this.setState({movieData: response})
+                console.log(response)
+                console.log(this.state)
+            })
             .catch(err => alert('Data failed to load. Try again later', err))
         ])
         .then(promiseDotAllIndex => {
@@ -26,17 +30,17 @@ export class ListSection extends Component {
             this.state.movieData.movies.sort((a,b) => {
                 return b.release_date - a.release_date;
             })
-            ), this.recentMovies);
+            ), `recentMovies`);
             this.getAList((
             this.state.movieData.movies.sort((a,b) => {
                 return a.average_rating - b.average_rating;
             })
-            ), this.lowestRated);
+            ), `lowestRated`);
             this.getAList((
             this.state.movieData.movies.sort((a,b) => {
                 return b.average_rating - a.average_rating;
             })
-            ), this.highestRated);
+            ), `highestRated`);
             //
         })
     }
@@ -49,24 +53,21 @@ export class ListSection extends Component {
             theTen.push(index);
             }
         })
-        this.setState({theKey: theTen})
-        console.log(this.state.theKey, 'asdfsafdfasfdafa')
+        this.setState({[theKey]: theTen})
+        console.log(this.state)
     }
     
     render() {
         return (
             <section style={listSectionStyle}>
                 <List list={this.state.recentMovies}/>
+                {console.log('Hello')}
                 <List list={this.state.lowestRated}/>
                 <List list={this.state.highestRated}/>
             </section>
         )
     }
 }
-
-// let firstDivStyle = {
-//     paddingTop: '15px'
-// }
 
 let listSectionStyle = {
     paddingTop: '15px',
