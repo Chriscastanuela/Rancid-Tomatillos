@@ -36,25 +36,25 @@ export class ListSection extends Component {
     //     })
     // }
 
-    componentWillMount() {
-        fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-        .then(response => response.json())
-        .then(res => {
-            let theMovies = res.movies;
-            let theTen = [];
-            theMovies.sort((a,b) => {
-                return b.release_date - a.release_date;
-            }).forEach(index => {
-                if (theTen.length < 10) {
-                    theTen.push(index);
-                    console.log(theTen);
-                }
-            this.setState({ recentMovies: theTen })
-            console.log(this.state);
-            console.log(this.state.recentMovies[0].title);
-            })
-        })
-    }
+    // componentWillMount() {
+    //     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    //     .then(response => response.json())
+    //     .then(res => {
+    //         let theMovies = res.movies;
+    //         let theTen = [];
+    //         theMovies.sort((a,b) => {
+    //             return b.release_date - a.release_date;
+    //         }).forEach(index => {
+    //             if (theTen.length < 10) {
+    //                 theTen.push(index);
+    //                 console.log(theTen);
+    //             }
+    //         this.setState({ recentMovies: theTen })
+    //         console.log(this.state);
+    //         console.log(this.state.recentMovies[0].title);
+    //         })
+    //     })
+    // }
     
     render() {
         // if (!this.state.movieData) {
@@ -62,8 +62,8 @@ export class ListSection extends Component {
         // } else {
             return (
                 <section style={listSectionStyle}>
-                    <List list={this.state.recentMovies}/>
-                    {/* <List /> */}
+                    {/* <List list={this.state.recentMovies}/> */}
+                    <List />
                     {/* <p>{this.state.recentMovies[0].title}</p> */}
                     {/* <List list={this.state.lowestRated}/>
                     <List list={this.state.highestRated}/> */}
