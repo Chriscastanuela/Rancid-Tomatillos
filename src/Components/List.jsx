@@ -4,15 +4,16 @@ export class List extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          list: props
+          list: props.list
         };
     }
 
     render() {
+        {console.log(this.props.list)}
+        {console.log(this.state.list)}
         return (
             <div style={listStyle}>
-                {console.log(this.state.list)}
-                <p>{this.props.list}</p>
+                {/* <p>{this.props.list[0][`title`]}</p> */}
             </div>
         )
     }
