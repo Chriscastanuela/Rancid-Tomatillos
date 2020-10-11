@@ -143,6 +143,7 @@ export default ListSection
 //     })
 // }
 
+    // <------------------------------------------------->didMount(), wasn't passing arrays to children  
     // componentDidMount() {
     //     Promise.all([
     //         fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')

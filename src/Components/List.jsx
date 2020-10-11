@@ -15,27 +15,34 @@ export class List extends Component {
             )
         } else {
             return (
-                <ul style={listStyle}>
-                    {console.log(this.props.list)}
-                    {this.props.list.map(i => {
-                        return <li>{i.title}</li>
-                    })}
-                </ul>
+                <div style={divStyle}>
+                    <ul style={listStyle}>
+                        {console.log(this.props.list)}
+                        {this.props.list.map(i => {
+                            return <li>{i.title}</li>
+                        })}
+                    </ul>
+                </div>
             )
         }
     }
 }
 
-let listStyle = {
+let divStyle = {
     margin: '15px',
     minWidth: '300px',
-    minHeight: '350px',
-    borderStyle: 'solid',
-    borderWidth: '1px',
+    minHeight: '300px',
+    // borderStyle: 'solid',
+    // borderWidth: '1px',
+    padding: '10px',
     borderRadius: '25%',
     backgroundColor: '#f3eed9',
     boxShadow: '5px 10px 30px #888888',
-    listStyle: 'none'
+}
+
+let listStyle = {
+    listStyle: 'none',
+    padding: '0'
 }
 
 export default List
