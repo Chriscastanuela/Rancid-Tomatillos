@@ -9,21 +9,18 @@ export class List extends Component {
     }
 
     render() {
-        // {console.log(this.props.list)};
-        // {console.log(this.state)};
         if (!this.state.list) {
             return (
                 <h1 style={{fontFamily: 'Kaushan Script, cursive'}}>Loading Data</h1>
             )
         } else {
             return (
-                <div style={listStyle}>
+                <ul style={listStyle}>
                     {console.log(this.state.list)}
                     {this.state.list.map(i => {
-                        return <p>{i.title}</p>
+                        return <li>{i.title}</li>
                     })}
-                    {/* <p>{this.state.list}</p> */}
-                </div>
+                </ul>
             )
         }
     }
@@ -46,7 +43,6 @@ export class List extends Component {
                 }
             this.setState({ list: theTen })
             console.log(this.state);
-            // console.log(this.state.recentMovies[0].title);
             })
         })
     }
@@ -54,13 +50,14 @@ export class List extends Component {
 
 let listStyle = {
     margin: '15px',
-    width: '300px',
-    // height: '300px',
+    minWidth: '300px',
+    minHeight: '350px',
     borderStyle: 'solid',
     borderWidth: '1px',
     borderRadius: '25%',
     backgroundColor: '#f3eed9',
-    boxShadow: '5px 10px 30px #888888'
+    boxShadow: '5px 10px 30px #888888',
+    listStyle: 'none'
 }
 
 export default List
