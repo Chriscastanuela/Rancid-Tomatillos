@@ -4,20 +4,21 @@ export class List extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          list: []
+          list: [],
+          header: ''
         };
     }
 
     render() {
-        if (!this.props.list) {
+        if (!this.props.list[9]) {
             return (
                 <h1 style={{fontFamily: 'Kaushan Script, cursive'}}>Loading...</h1>
             )
         } else {
             return (
                 <div style={divStyle}>
+                    <h1 style={{fontFamily: 'Kaushan Script, cursive'}}>{this.props.header}</h1>
                     <ul style={listStyle}>
-                        {console.log(this.props.list)}
                         {this.props.list.map(i => {
                             return <li>{i.title}</li>
                         })}
@@ -32,8 +33,8 @@ let divStyle = {
     margin: '15px',
     minWidth: '300px',
     minHeight: '300px',
-    // borderStyle: 'solid',
-    // borderWidth: '1px',
+    borderStyle: 'solid',
+    borderWidth: '1px',
     padding: '10px',
     borderRadius: '25%',
     backgroundColor: '#f3eed9',
@@ -46,6 +47,26 @@ let listStyle = {
 }
 
 export default List
+
+// componentDidMount() {
+//     let theArray = [];
+//     this.props.list.forEach(i => {
+//         theArray.push(i);
+//     })
+//     this.setState({list: theArray});
+//     this.setState({header: this.props.header});
+//     console.log(this.state);
+// }
+
+// componentDidMount() {
+        // let theArray = [];
+        // this.props.list.map(i => {
+        //     theArray.push(i);
+        // })
+        // this.setState({list: theArray});
+    //     this.setState({header: this.props.header});
+    //     console.log(this.state);
+    // }
 
 // componentDidMount() {
     //     {console.log(this.props)};

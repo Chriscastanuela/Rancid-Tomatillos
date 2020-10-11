@@ -12,29 +12,24 @@ export class ListSection extends Component {
         };
     }
 
-    componentWillMount() {
-        // Promise.all([
-            fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-                .then(response => response.json())
-                .then(res => {
-                    let theMovies = res.movies;
-                    
-                    this.getAList(theMovies.sort((a,b) => {
-                        return b.release_date - a.release_date;
-                    }), 'recentMovies');
-                    this.getAList(theMovies.sort((a,b) => {
-                        return a.average_rating - b.average_rating;
-                    }), 'lowestRated')
-                    this.getAList(theMovies.sort((a,b) => {
-                        return b.average_rating - a.average_rating;
-                    }), 'highestRated')
-                    
-                    console.log(this.state);
-            })
-        //     .then(index => {
-        //         //
-        //     })
-        // ])
+    componentDidMount() {
+        fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+            .then(response => response.json())
+            .then(res => {
+                let theMovies = res.movies;
+                
+                this.getAList(theMovies.sort((a,b) => {
+                    return b.release_date - a.release_date;
+                }), 'recentMovies');
+                this.getAList(theMovies.sort((a,b) => {
+                    return a.average_rating - b.average_rating;
+                }), 'lowestRated')
+                this.getAList(theMovies.sort((a,b) => {
+                    return b.average_rating - a.average_rating;
+                }), 'highestRated')
+                
+                console.log(this.state);
+        })
     }
 
     getAList(theList, theKey) {
@@ -54,10 +49,9 @@ export class ListSection extends Component {
         } else {
             return (
                 <section style={listSectionStyle}>
-                    <List list={this.state.recentMovies}/>
-                    {/* <List /> */}
-                    <List list={this.state.lowestRated}/>
-                    <List list={this.state.highestRated}/>
+                    <List header={'Most Recent'} list={this.state.recentMovies}/>
+                    <List header={'Highest Rated'} list={this.state.highestRated}/>
+                    <List header={'Lowest Rated'} list={this.state.lowestRated}/>
                 </section>
             )
         }
@@ -73,6 +67,12 @@ let listSectionStyle = {
 }
 
 export default ListSection
+
+// Promise.all([
+//     .then(index => {
+//         //
+//     })
+// ])
 
 // Promise.all([
 //     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
