@@ -20,7 +20,7 @@ export class List extends Component {
                     <h1 style={{fontFamily: 'Kaushan Script, cursive'}}>{this.props.header}</h1>
                     <ul style={listStyle}>
                         {this.props.list.map(i => {
-                            return <li>{i.title}</li>
+                            return  <li>{i.title} {Math.floor(i.average_rating)}</li>
                         })}
                     </ul>
                 </div>
