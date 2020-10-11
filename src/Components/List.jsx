@@ -9,42 +9,20 @@ export class List extends Component {
     }
 
     render() {
-        if (!this.state.list) {
+        if (!this.props.list) {
             return (
-                <h1 style={{fontFamily: 'Kaushan Script, cursive'}}>Loading Data</h1>
+                <h1 style={{fontFamily: 'Kaushan Script, cursive'}}>Loading...</h1>
             )
         } else {
             return (
                 <ul style={listStyle}>
-                    {console.log(this.state.list)}
-                    {this.state.list.map(i => {
+                    {console.log(this.props.list)}
+                    {this.props.list.map(i => {
                         return <li>{i.title}</li>
                     })}
                 </ul>
             )
         }
-    }
-
-    componentDidMount() {
-        {console.log(this.props)};
-        this.setState({ list: this.props.list });
-        {console.log('asfdafsdfsafdfsda', this.state.list)}
-        fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-        .then(response => response.json())
-        .then(res => {
-            let theMovies = res.movies;
-            let theTen = [];
-            theMovies.sort((a,b) => {
-                return b.release_date - a.release_date;
-            }).forEach(index => {
-                if (theTen.length < 10) {
-                    theTen.push(index);
-                    console.log(theTen);
-                }
-            this.setState({ list: theTen })
-            console.log(this.state);
-            })
-        })
     }
 }
 
@@ -61,3 +39,25 @@ let listStyle = {
 }
 
 export default List
+
+// componentDidMount() {
+    //     {console.log(this.props)};
+    //     this.setState({ list: this.props.list });
+    //     {console.log('asfdafsdfsafdfsda', this.state.list)}
+    //     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    //     .then(response => response.json())
+    //     .then(res => {
+    //         let theMovies = res.movies;
+    //         let theTen = [];
+    //         theMovies.sort((a,b) => {
+    //             return b.release_date - a.release_date;
+    //         }).forEach(index => {
+    //             if (theTen.length < 10) {
+    //                 theTen.push(index);
+    //                 console.log(theTen);
+    //             }
+    //         this.setState({ list: theTen })
+    //         console.log(this.state);
+    //         })
+    //     })
+    // }
