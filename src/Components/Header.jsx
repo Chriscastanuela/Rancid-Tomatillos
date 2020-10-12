@@ -32,7 +32,7 @@ const headerStyle = {
     fontSize: '30px',
     gridColumn: '1',
     textAlign: 'left',
-    marginLeft: '10%'
+    marginLeft: '10%',
 }
 
 const userNameAndIconStyle = {
