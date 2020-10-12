@@ -4,18 +4,20 @@ import './css/App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Main from './Components/Main';
+import Login from './Components/Login';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Header />
-        <Route path='/' render={props => (
+        <Route exact path='/' render={props => (
           <React.Fragment>
             <Main />
             <Footer />
           </React.Fragment>
         )} />
+        <Route path='/login' component={Login}/>
       </div>
     </Router>
   );
