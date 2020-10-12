@@ -51,7 +51,7 @@ export class ListSection extends Component {
             return (
                 <Container>
                     <Row>
-                        <Col>
+                        <Col >
                             <List header={'Most Recent'} list={this.state.recentMovies}/>
                         </Col>
                         <Col>

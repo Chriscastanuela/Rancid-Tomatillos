@@ -22,13 +22,11 @@ export default class Movies extends Component {
         {this.state.loading || !this.state.allMovies ? (
         <h1>loading, yo...</h1>
         ) : (
-        <Container>
-          <CardDeck>
+          <CardDeck style={{justifyContent: 'center'}}>
             {this.state.allMovies.map((movie) => (
               <MovieCard key={movie.id} movie={movie}/>
             ))}
           </CardDeck>
-        </Container>
         )}
       </div>
     )

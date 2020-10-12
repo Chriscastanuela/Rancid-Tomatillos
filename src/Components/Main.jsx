@@ -4,7 +4,7 @@ import Movies from './Movies.jsx'
 
 export default function Main() {
   return (
-    <section>
+    <section >
       <ListSection />
       <Movies />
     </section>
