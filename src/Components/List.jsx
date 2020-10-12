@@ -31,8 +31,11 @@ export class List extends Component {
 
 let divStyle = {
     margin: '15px',
-    minWidth: '300px',
-    minHeight: '300px',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    minWidth: '260px',
+    maxWidth: '330px',
+    height: '350px',
     borderStyle: 'solid',
     borderWidth: '1px',
     padding: '10px',

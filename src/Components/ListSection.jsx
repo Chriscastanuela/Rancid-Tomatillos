@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import List from './List';
+import { Container, Row, Col } from 'react-bootstrap'
 
 export class ListSection extends Component {
     constructor() {
@@ -48,23 +49,32 @@ export class ListSection extends Component {
             return <h1 style={{fontFamily: 'Kaushan Script, cursive',}}>Loading...</h1>
         } else {
             return (
-                <section style={listSectionStyle}>
-                    <List header={'Most Recent'} list={this.state.recentMovies}/>
-                    <List header={'Highest Rated'} list={this.state.highestRated}/>
-                    <List header={'Lowest Rated'} list={this.state.lowestRated}/>
-                </section>
+                <Container>
+                    <Row>
+                        <Col >
+                            <List header={'Most Recent'} list={this.state.recentMovies}/>
+                        </Col>
+                        <Col>
+                            <List header={'Highest Rated'} list={this.state.highestRated}/>
+                        </Col>
+                        <Col>
+                            <List header={'Lowest Rated'} list={this.state.lowestRated}/>   
+                        </Col>
+                    </Row>
+                </Container>
+    
             )
         }
     }
 }
 
-let listSectionStyle = {
-    paddingTop: '15px',
-    display: 'grid',
-    gridTemplateRows: '1fr 1fr 1fr',
-    justifyContent: 'center',
-    alignContent: 'center',
-}
+// let listSectionStyle = {
+//     paddingTop: '15px',
+//     display: 'grid',
+//     gridTemplateRows: '1fr 1fr 1fr',
+//     justifyContent: 'center',
+//     alignContent: 'center',
+// }
 
 export default ListSection
 
