@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import ListSection from './ListSection';
+import Movies from './Movies.jsx'
 
 export default function Main() {
   return (
     <section style={mainSectionStyle}>
       <ListSection />
-      {/* <Movies /> */}
+      <Movies />
     </section>
   )
 }
