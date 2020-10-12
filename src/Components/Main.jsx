@@ -5,7 +5,7 @@ export default function Main() {
   return (
     <section style={mainSectionStyle}>
       <ListSection />
-      {/* <SearchFormAndMoviePosters /> */}
+      {/* <Movies /> */}
     </section>
   )
 }
