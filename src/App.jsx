@@ -10,8 +10,12 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <Main />
-        <Footer />
+        <Route path='/' render={props => (
+          <React.Fragment>
+            <Main />
+            <Footer />
+          </React.Fragment>
+        )} />
       </div>
     </Router>
   );
