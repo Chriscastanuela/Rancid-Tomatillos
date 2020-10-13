@@ -15,7 +15,7 @@ export default function Main() {
 
 // let mainSectionStyle = {
 //   display: 'grid',
-//   gridTemplateRows: '1fr 1fr'
+//   gridTemplateRows: '.5fr 1fr'
 // }
 
 // getRecentMovies() {

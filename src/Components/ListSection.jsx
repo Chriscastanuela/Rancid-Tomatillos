@@ -62,7 +62,7 @@ export class ListSection extends Component {
                         </Col>
                     </Row>
                 </Container>
-    
+
             )
         }
     }

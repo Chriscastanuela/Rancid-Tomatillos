@@ -23,7 +23,7 @@ const bodyStyle = {
   overflowX: 'scroll',
   overflowY: 'hidden',
   maxHeight: '91px',
-  whiteSpace: 'nowrap'
+  whiteSpace: 'nowrap',
 }
 
 export default MovieCard

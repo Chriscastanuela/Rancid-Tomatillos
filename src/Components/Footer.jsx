@@ -16,7 +16,8 @@ const sectionStyle = {
     borderRight: 'none',
     borderBottom: 'none',
     borderWidth: '1px',
-    backgroundColor: '#fa5252'
+    backgroundColor: '#fa5252',
+    height: '80px'
 }
 
 const headerStyle = {
