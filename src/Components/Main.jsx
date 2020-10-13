@@ -13,7 +13,8 @@ export default function Main() {
 
 let mainSectionStyle = {
   display: 'grid',
-  gridTemplateRows: '1fr 1fr'
+  gridTemplateRows: '1fr 1fr',
+  justifyContent: 'center'
 }
 
 // getRecentMovies() {

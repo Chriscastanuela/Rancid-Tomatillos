@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, CardDeck } from 'react-bootstrap'
+// import { Container, CardDeck } from 'react-bootstrap'
 import MovieCard from './MovieCard.jsx'
 
 export default class Movies extends Component {
@@ -9,11 +9,10 @@ export default class Movies extends Component {
   }
 
   async componentDidMount() {
-    const url = "https://rancid-tomatillos.herokuapp.com/api/v2/movies";
-    const response = await fetch(url);
-    const data = await response.json();
-    this.setState({allMovies: data.movies, loading: false});
-    console.log(this.state.allMovies);
+    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
+      .then(response => response.json())
+      .then(data => this.setState({allMovies: data.movies, loading: false}))
+      .catch(err => alert("WOAH, MOVIES FAILED TO LOAD!!!!!"))
   }
 
   render() {
@@ -22,11 +21,11 @@ export default class Movies extends Component {
         {this.state.loading || !this.state.allMovies ? (
         <h1 style={{fontFamily: 'Permanent Marker, cursive',}}>Loading</h1>
         ) : (
-          <CardDeck style={{justifyContent: 'center'}}>
+          <section>
             {this.state.allMovies.map((movie) => (
               <MovieCard key={movie.id} movie={movie}/>
             ))}
-          </CardDeck>
+          </section>
         )}
       </div>
     )

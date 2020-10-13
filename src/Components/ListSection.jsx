@@ -62,7 +62,7 @@ export class ListSection extends Component {
                 //         </Col>
                 //     </Row>
                 // </Container>
-                <section>
+                <section style={listSectionStyle}>
                     <List header={'Most Recent'} list={this.state.recentMovies}/>
                     <List header={'Highest Rated'} list={this.state.highestRated}/>
                     <List header={'Lowest Rated'} list={this.state.lowestRated}/>   
@@ -75,9 +75,9 @@ export class ListSection extends Component {
 let listSectionStyle = {
     paddingTop: '15px',
     display: 'grid',
-    gridTemplateRows: '1fr',
-    justifyContent: 'center',
-    alignContent: 'center',
+    gridTemplateColumns: '1fr',
+    // justifyContent: 'center',
+    // alignContent: 'center',
 }
 
 export default ListSection
