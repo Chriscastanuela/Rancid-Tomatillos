@@ -49,32 +49,36 @@ export class ListSection extends Component {
             return <h1 style={{fontFamily: 'Kaushan Script, cursive',}}>Loading...</h1>
         } else {
             return (
-                <Container>
-                    <Row>
-                        <Col >
-                            <List header={'Most Recent'} list={this.state.recentMovies}/>
-                        </Col>
-                        <Col>
-                            <List header={'Highest Rated'} list={this.state.highestRated}/>
-                        </Col>
-                        <Col>
-                            <List header={'Lowest Rated'} list={this.state.lowestRated}/>   
-                        </Col>
-                    </Row>
-                </Container>
-
+                // <Container>
+                //     <Row>
+                //         <Col >
+                //             <List header={'Most Recent'} list={this.state.recentMovies}/>
+                //         </Col>
+                //         <Col>
+                //             <List header={'Highest Rated'} list={this.state.highestRated}/>
+                //         </Col>
+                //         <Col>
+                //             <List header={'Lowest Rated'} list={this.state.lowestRated}/>   
+                //         </Col>
+                //     </Row>
+                // </Container>
+                <section>
+                    <List header={'Most Recent'} list={this.state.recentMovies}/>
+                    <List header={'Highest Rated'} list={this.state.highestRated}/>
+                    <List header={'Lowest Rated'} list={this.state.lowestRated}/>   
+                </section>
             )
         }
     }
 }
 
-// let listSectionStyle = {
-//     paddingTop: '15px',
-//     display: 'grid',
-//     gridTemplateRows: '1fr 1fr 1fr',
-//     justifyContent: 'center',
-//     alignContent: 'center',
-// }
+let listSectionStyle = {
+    paddingTop: '15px',
+    display: 'grid',
+    gridTemplateRows: '1fr',
+    justifyContent: 'center',
+    alignContent: 'center',
+}
 
 export default ListSection
 

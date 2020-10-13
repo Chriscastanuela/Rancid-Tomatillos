@@ -4,19 +4,17 @@ import Movies from './Movies.jsx'
 
 export default function Main() {
   return (
-    <section >
+    <section style={mainSectionStyle}>
       <ListSection />
       <Movies />
     </section>
   )
 }
 
-
-
-// let mainSectionStyle = {
-//   display: 'grid',
-//   gridTemplateRows: '.5fr 1fr'
-// }
+let mainSectionStyle = {
+  display: 'grid',
+  gridTemplateRows: '1fr 1fr'
+}
 
 // getRecentMovies() {
   //   console.log('I exist, am I before or after?')

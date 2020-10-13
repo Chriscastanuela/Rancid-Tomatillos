@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import userIcon from '../Assets/user.png'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Route } from 'react-router-dom'
 
 export class Header extends Component {
 
     render() {
         return (
             <section style={sectionStyle}>
-                <h1 className="Header" style={headerStyle}>Rancid Tomatillos</h1>
+                <NavLink style={headerStyle} to="">
+                    <h1 className="Header" style={headerStyle}>Rancid Tomatillos</h1>
+                </NavLink>
                 <div className="UserNameAndIcon" style={userNameAndIconStyle}>
                     <img src={userIcon} alt="User Icon" style={userIconStyle}/>
                     <NavLink to="login" className="User" style={userStyle}>Login</NavLink>
@@ -36,6 +38,9 @@ const headerStyle = {
     textAlign: 'left',
     alignSelf: 'center',
     marginLeft: '15px',
+    cursor: 'pointer',
+    textDecoration: 'none',
+    color: 'black',
 }
 
 const userNameAndIconStyle = {
