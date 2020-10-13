@@ -28,7 +28,8 @@ const sectionStyle = {
 }
 
 const headerStyle = {
-    fontFamily: 'Kaushan Script, cursive',
+    // fontFamily: 'Kaushan Script, cursive',
+    fontFamily: 'Permanent Marker, cursive',
     fontSize: '30px',
     gridColumn: '1',
     textAlign: 'left',

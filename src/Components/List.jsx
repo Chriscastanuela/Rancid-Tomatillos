@@ -13,13 +13,13 @@ export class List extends Component {
         if (!this.props.list[9]) {
             return (
                 <div style={divStyle}>
-                    <h3 style={{fontFamily: 'Kaushan Script, cursive'}}>Loading...</h3>
+                    <h3 style={{fontFamily: 'Permanent Marker, cursive',}}>Loading...</h3>
                 </div>
             )
         } else {
             return (
                 <div style={divStyle}>
-                    <h3 style={{fontFamily: 'Kaushan Script, cursive'}}>{this.props.header}</h3>
+                    <h3 style={{fontFamily: 'Permanent Marker, cursive',}}>{this.props.header}</h3>
                     <ul style={listStyle}>
                         {this.props.list.map(i => {
                             return  <li>{i.title} {Math.floor(i.average_rating)}</li>
