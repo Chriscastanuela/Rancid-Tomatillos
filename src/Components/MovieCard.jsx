@@ -10,7 +10,7 @@ export class MovieCard extends Component {
         <Card.Body>
           <Card.Title>{this.props.movie.title}</Card.Title>
           <Card.Subtitle>
-            Average rating: {this.props.movie.average_rating}/10
+            Average rating: {Math.floor(this.props.movie.average_rating)}/10
           </Card.Subtitle>
         </Card.Body>
       </Card>
