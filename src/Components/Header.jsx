@@ -33,10 +33,8 @@ const headerStyle = {
     fontSize: '30px',
     gridColumn: '1',
     textAlign: 'left',
-    marginLeft: '10%',
-    hover: {
-        cursor: 'pointer'
-    }
+    alignSelf: 'center',
+    marginLeft: '15px',
 }
 
 const userNameAndIconStyle = {
@@ -52,7 +50,7 @@ const userStyle = {
     fontWeight: 'bold',
     fontSize: '20px',
     gridColumn: '2',
-    cursor: 'pointer',
+    cursor: 'pointer'
     // marginRight: '20px'
 }
 

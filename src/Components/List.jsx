@@ -13,7 +13,7 @@ export class List extends Component {
         if (!this.props.list[9]) {
             return (
                 <div style={divStyle}>
-                    <h3 style={{fontFamily: 'Permanent Marker, cursive',}}>Loading...</h3>
+                    {/* <h3 style={{fontFamily: 'Permanent Marker, cursive',}}>Loading...</h3> */}
                 </div>
             )
         } else {

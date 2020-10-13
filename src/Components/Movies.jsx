@@ -20,7 +20,7 @@ export default class Movies extends Component {
     return (
       <div>
         {this.state.loading || !this.state.allMovies ? (
-        <h1>Loading</h1>
+        <h1 style={{fontFamily: 'Permanent Marker, cursive',}}>Loading</h1>
         ) : (
           <CardDeck style={{justifyContent: 'center'}}>
             {this.state.allMovies.map((movie) => (
