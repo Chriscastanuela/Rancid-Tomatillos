@@ -52,10 +52,8 @@ const userStyle = {
     fontSize: '20px',
     gridColumn: '2',
     cursor: 'pointer',
-    visited: {
-        color: 'black'
-    }
-    // marginRight: '20px'
+    textDecoration: 'none',
+    color: 'black',
 }
 
 const userIconStyle = {
