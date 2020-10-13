@@ -14,10 +14,10 @@ function App() {
         <Route exact path='/' render={props => (
           <React.Fragment>
             <Main />
-            <Footer />
           </React.Fragment>
         )} />
         <Route path='/login' component={Login}/>
+        <Footer />
       </div>
     </Router>
   );

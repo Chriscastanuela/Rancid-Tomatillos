@@ -9,7 +9,7 @@ export class Header extends Component {
                 <h1 className="Header" style={headerStyle}>Rancid Tomatillos</h1>
                 <div className="UserNameAndIcon" style={userNameAndIconStyle}>
                     <img src={userIcon} alt="User Icon" style={userIconStyle}/>
-                    <a className="User" style={userStyle}>FirstName</a>
+                    <p className="User" style={userStyle}>Login</p>
                 </div>
             </section>
         )
@@ -33,6 +33,9 @@ const headerStyle = {
     gridColumn: '1',
     textAlign: 'left',
     marginLeft: '10%',
+    hover: {
+        cursor: 'pointer'
+    }
 }
 
 const userNameAndIconStyle = {

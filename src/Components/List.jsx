@@ -10,22 +10,16 @@ export class List extends Component {
     }
 
     render() {
-        if (!this.props.list[9]) {
-            return (
-                <h1 style={{fontFamily: 'Kaushan Script, cursive'}}>Loading...</h1>
-            )
-        } else {
-            return (
-                <div style={divStyle}>
-                    <h1 style={{fontFamily: 'Kaushan Script, cursive'}}>{this.props.header}</h1>
-                    <ul style={listStyle}>
-                        {this.props.list.map(i => {
-                            return  <li>{i.title} {Math.floor(i.average_rating)}</li>
-                        })}
-                    </ul>
-                </div>
-            )
-        }
+        return (
+            <div style={divStyle}>
+                <h3 style={{fontFamily: 'Kaushan Script, cursive'}}>{this.props.header}</h3>
+                <ul style={listStyle}>
+                    {this.props.list.map(i => {
+                        return  <li>{i.title} {Math.floor(i.average_rating)}</li>
+                    })}
+                </ul>
+            </div>
+        )
     }
 }
 
