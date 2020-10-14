@@ -65,7 +65,6 @@ let listSectionStyle = {
     borderRadius: '10%',
     display: 'grid',
     gridTemplateColumns: '1fr',
-    display: 'grid',
     gridTemplateRows: '1fr',
     height: '400px',
     width: '325px',
@@ -77,7 +76,7 @@ let listSectionStyle = {
     justifyContent: 'center',
     alignContent: 'center',
     gridColumn: 1,
-    display: 'flex'
+    // display: 'flex'
 }
 
 export default ListSection
