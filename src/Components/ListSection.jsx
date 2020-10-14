@@ -9,6 +9,7 @@ export class ListSection extends Component {
           recentMovies: [],
           lowestRated: [],
           highestRated: [],
+          all: [],
           movieData: [],
         };
     }
@@ -18,7 +19,10 @@ export class ListSection extends Component {
             .then(response => response.json())
             .then(res => {
                 let theMovies = res.movies;
-                
+                let newArr = theMovies.map(i => {
+                    return i
+                });
+                this.setState({all: newArr});
                 this.getAList(theMovies.sort((a,b) => {
                     return b.release_date - a.release_date;
                 }), 'recentMovies');
@@ -28,7 +32,6 @@ export class ListSection extends Component {
                 this.getAList(theMovies.sort((a,b) => {
                     return b.average_rating - a.average_rating;
                 }), 'highestRated')
-                
                 console.log(this.state);
         })
     }
@@ -46,14 +49,16 @@ export class ListSection extends Component {
     
     render() {
         if (!this.state.movieData) {
-            return <h1 style={{fontFamily: 'Kaushan Script, cursive',}}>Loading...</h1>
+            return <h1 style={{fontFamily: 'Permanent Marker, cursive',}}>Loading...</h1>
         } else {
             return (
                 // <section style={containerStyle}>
                     <section >
+                        <h1 style={{fontFamily: 'Permanent Marker, cursive', }}>Movies</h1>
                         <List header={'Most Recent'} list={this.state.recentMovies}/>
                         <List header={'Highest Rated'} list={this.state.highestRated}/>
-                        <List header={'Lowest Rated'} list={this.state.lowestRated}/>   
+                        <List header={'Lowest Rated'} list={this.state.lowestRated}/>  
+                        <List header={'All'} list={this.state.all}/>   
                     </section>
                 // </section>
             )

@@ -18,10 +18,12 @@ export class List extends Component {
         } else {
             return (
                 <div style={divStyle}>
-                    <h3 style={{fontFamily: 'Permanent Marker, cursive', gridColumn: 1}}>{this.props.header}</h3>
+                    <h3 style={headerStyle}>{this.props.header}</h3>
                     <ul style={listStyle}>
                         {this.props.list.map(i => {
-                            return  <li>{i.title} {Math.floor(i.average_rating)}</li>
+                            return  (
+                                <p style={liStyle}>{i.title} {Math.floor(i.average_rating)}</p>
+                            )
                         })}
                     </ul>
                 </div>
@@ -31,29 +33,41 @@ export class List extends Component {
 }
 
 let divStyle = {
-    // minWidth: '305px',
-    // width: '100%',
-    // borderStyle: 'solid',
-    // borderWidth: '1px',
-    // borderRadius: '25%',
-    // backgroundColor: '#f3eed9',
-    // boxShadow: '5px 10px 30px #888888',
+    borderStyle: 'solid',
+    borderWidth: '1px',
+    borderRadius: '10%',
     minHeight: '322px',
-    // padding: '10px',
-    // alignSelf: 'center',
-    // justifySelf: 'center',
     marginLeft: '10px',
     marginRight: '10px',
-    justifyContent: 'center',
-    alignContent: 'center',
     display: 'grid',
-    gridTemplateColumns: '1fr .5fr .5fr .5fr'
+    gridTemplateColumns: '1fr .5fr .5fr',
+    gridTemplateRows: '.25fr 1fr',
+    marginBottom: '20px',
+    boxShadow: '10px 15px 35px #888888',
+}
+
+let headerStyle = {
+    margin: 0,
+    // fontFamily: 'Permanent Marker, cursive',
+    justifySelf: 'center',
+    alignSelf: 'center',
+    fontFamily: 'Open Sans, sans-serif',
+    gridColumn: 1,
+    gridRow: 1
 }
 
 let listStyle = {
     listStyle: 'none',
-    padding: '0',
-    gridColumn: 1
+    margin: 0,
+    // // marginBottom: '13px',
+    padding: 0,
+    gridColumn: 1,
+    gridRow: 2
+}
+
+let liStyle = {
+    margin: 0,
+    textAlign: 'left'
 }
 
 export default List
