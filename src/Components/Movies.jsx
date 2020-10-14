@@ -17,17 +17,34 @@ export default class Movies extends Component {
 
   render() {
     return (
-      <div>
+      <section className='MovieSection' style={{margin: 0, padding: 0}}>
         {this.state.loading || !this.state.allMovies ? (
         <h1 style={{fontFamily: 'Permanent Marker, cursive',}}>Loading</h1>
         ) : (
-          <section>
+          <section className='MovieContainer' style={movieSectionStyle}>
             {this.state.allMovies.map((movie) => (
               <MovieCard key={movie.id} movie={movie}/>
             ))}
           </section>
         )}
-      </div>
+      </section>
     )
   }
+}
+
+let movieSectionStyle = {
+  padding: '0px',
+  borderRadius: '10%',
+  height: '466px',
+  width: '378px',
+  overflowX: 'auto',
+  boxShadow: '10px 15px 35px #888888',
+  borderStyle: 'solid',
+  borderWidth: '2px',
+  justifyContent: 'center',
+  alignContent: 'center',
+  justifySelf: 'center',
+  alignSelf: 'center',
+  margin: 0,
+  gridColumn: 1,
 }

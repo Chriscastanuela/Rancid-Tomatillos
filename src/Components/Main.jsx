@@ -13,8 +13,10 @@ export default function Main() {
 
 let mainSectionStyle = {
   display: 'grid',
-  gridTemplateRows: '1fr 1fr',
-  justifyContent: 'center'
+  gridTemplateRows: '.5fr .5fr',
+  gridGap: '20px',
+  alignContent: 'center',
+  justifyContent: 'center',
 }
 
 // getRecentMovies() {

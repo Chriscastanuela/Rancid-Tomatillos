@@ -13,7 +13,6 @@ export class List extends Component {
         if (!this.props.list[9]) {
             return (
                 <div style={divStyle}>
-                    {/* <h3 style={{fontFamily: 'Permanent Marker, cursive',}}>Loading...</h3> */}
                 </div>
             )
         } else {
@@ -32,17 +31,18 @@ export class List extends Component {
 }
 
 let divStyle = {
-    margin: '15px',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    width: '282px',
-    height: '350px',
+    minWidth: '305px',
+    minHeight: '322px',
     borderStyle: 'solid',
     borderWidth: '1px',
     padding: '10px',
     borderRadius: '25%',
     backgroundColor: '#f3eed9',
     boxShadow: '5px 10px 30px #888888',
+    alignSelf: 'center',
+    justifySelf: 'center',
+    marginLeft: '10px',
+    marginRight: '10px',
 }
 
 let listStyle = {

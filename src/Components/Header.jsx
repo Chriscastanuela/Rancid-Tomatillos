@@ -27,11 +27,11 @@ const sectionStyle = {
     borderRight: 'none',
     borderTop: 'none',
     borderWidth: '1px',
-    backgroundColor: '#fa5252'
+    backgroundColor: '#fa5252',
+    marginBottom: '50px'
 }
 
 const headerStyle = {
-    // fontFamily: 'Kaushan Script, cursive',
     fontFamily: 'Permanent Marker, cursive',
     fontSize: '30px',
     gridColumn: '1',
@@ -44,7 +44,6 @@ const headerStyle = {
 }
 
 const userNameAndIconStyle = {
-    // marginRight: '30%',
     textAlign: 'right',
     marginTop: '10px',
     marginRight: '35px',
@@ -66,7 +65,6 @@ const userIconStyle = {
     width: '50px',
     height: '50px',
     justifySelf: 'right',
-    // alignSelf: 'center',
 }
 
 export default Header

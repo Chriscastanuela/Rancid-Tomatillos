@@ -49,19 +49,6 @@ export class ListSection extends Component {
             return <h1 style={{fontFamily: 'Kaushan Script, cursive',}}>Loading...</h1>
         } else {
             return (
-                // <Container>
-                //     <Row>
-                //         <Col >
-                //             <List header={'Most Recent'} list={this.state.recentMovies}/>
-                //         </Col>
-                //         <Col>
-                //             <List header={'Highest Rated'} list={this.state.highestRated}/>
-                //         </Col>
-                //         <Col>
-                //             <List header={'Lowest Rated'} list={this.state.lowestRated}/>   
-                //         </Col>
-                //     </Row>
-                // </Container>
                 <section style={listSectionStyle}>
                     <List header={'Most Recent'} list={this.state.recentMovies}/>
                     <List header={'Highest Rated'} list={this.state.highestRated}/>
@@ -73,11 +60,24 @@ export class ListSection extends Component {
 }
 
 let listSectionStyle = {
-    paddingTop: '15px',
+    paddingLeft: '25px',
+    paddingRight: '25px',
+    borderRadius: '10%',
     display: 'grid',
     gridTemplateColumns: '1fr',
-    // justifyContent: 'center',
-    // alignContent: 'center',
+    display: 'grid',
+    gridTemplateRows: '1fr',
+    height: '400px',
+    width: '325px',
+    overflowX: 'auto',
+    backgroundColor: '#d1d7dc',
+    boxShadow: '10px 15px 35px #888888',
+    borderStyle: 'solid',
+    borderWidth: '2px',
+    justifyContent: 'center',
+    alignContent: 'center',
+    gridColumn: 1,
+    display: 'flex'
 }
 
 export default ListSection

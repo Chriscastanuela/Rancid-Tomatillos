@@ -5,7 +5,7 @@ export class MovieCard extends Component {
   render() {
     return (
       // <Card style={{ width: '12rem', padding: 'auto', justifySelf: 'center', marginBottom: '20px', marginTop: '20px'}}>
-      //   <Card.Img variant="top" src={this.props.movie.poster_path} />
+
       //   <Card.Body style={bodyStyle}>
       //     <Card.Title>{this.props.movie.title}</Card.Title>
       //     <Card.Subtitle>
@@ -15,29 +15,36 @@ export class MovieCard extends Component {
       // </Card>
       <div style={divStyle}>
         <img src={this.props.movie.poster_path} alt="Movie Poster" style={imgStyle}/>
+        <div style={bodyStyle}>
+          <p>{this.props.movie.title}</p>
+        </div>
       </div>
     )
   }
 }
 
 let divStyle = { 
-  width: '282px',
-  padding: 'auto',
-  marginBottom: '20px',
-  marginTop: '20px',
-  justifySelf: 'Center'
+  height: '500px',
+  width: '350px',
+  justifySelf: 'Center',
+  alignSelf: 'center',
 }
 
 let imgStyle = {
   height: '450px',
   width: '282px',
+  margin: 0,
 }
 
 const bodyStyle = {
   overflowX: 'scroll',
   overflowY: 'hidden',
   maxHeight: '91px',
+  width: '282px',
   whiteSpace: 'nowrap',
+  margin: 0,
+  justifySelf: 'center',
+  alignSelf: 'center',
 }
 
 export default MovieCard
