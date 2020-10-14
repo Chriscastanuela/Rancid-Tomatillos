@@ -9,7 +9,9 @@ export default class Login extends Component {
             password: ''
         }
     }
+    //name: 'Claire', email: 'claire@turing.io', password: 'qwer1234'
     sendLogin() {
+        console.log(this.state)
         let thePost = {
             method: 'POST',
             headers: {
@@ -17,12 +19,16 @@ export default class Login extends Component {
             },
             body: JSON.stringify(
                 {
-                    email: '', 
-                    password: ''
+                    email: this.state.email,
+                    password: this.state.password,
                 }
             )
         }
-        fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies', thePost)
+        console.log(thePost)
+        fetch('https://rancid-tomatillos.herokuapp.com/api/v2/login', thePost)
+            .then(res => console.log(res.json()))
+            // .then(res => console.log())
+            .catch(err => console.log(err))
     }
     formUpdate(e) {
         this.setState({[e.target.name]: e.target.value});
@@ -33,7 +39,7 @@ export default class Login extends Component {
                 <div style={divStyle}>
                     <input type="text" name="email" id="" placeholder='Username' style={inputStyle} value={this.state.email} onChange={(e) => this.formUpdate(e)}/>
                     <input type="text" name="password" id="" placeholder='Password' style={inputStyle} value={this.state.password} onChange={(e) => this.formUpdate(e)}/>
-                    <button style={buttonStyle}>Login</button>
+                    <button style={buttonStyle} onClick={() => this.sendLogin()}>Login</button>
                 </div>
             </section>
         )
