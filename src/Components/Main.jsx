@@ -5,8 +5,11 @@ import Movies from './Movies.jsx'
 export default function Main() {
   return (
     <section style={mainSectionStyle}>
-      <ListSection />
       {/* <Movies /> */}
+      <h1 style={{fontFamily: 'Permanent Marker, cursive', margin: 0}}>Categories</h1>
+      <ListSection />
+      <h1 style={{fontFamily: 'Permanent Marker, cursive', margin: 0}}>Posters</h1>
+      <Movies />
     </section>
   )
 }

@@ -18,11 +18,15 @@ export class List extends Component {
         } else {
             return (
                 <div style={divStyle}>
-                    <h3 style={headerStyle}>{this.props.header}</h3>
+                    <h2 style={headerStyle}>{this.props.header}</h2>
                     <ul style={listStyle}>
                         {this.props.list.map(i => {
                             return  (
-                                <p style={liStyle}>{i.title} {Math.floor(i.average_rating)}</p>
+                                <span style={spanStyle}>
+                                    {/* <p style={titleStyle}>{i.title} Rating: {Math.floor(i.average_rating)}</p> */}
+                                    <h4 style={{margin: 3}}>{i.title}</h4>
+                                    <p style={{margin: 3}}>Rating: {Math.floor(i.average_rating)}</p>
+                                </span>
                             )
                         })}
                     </ul>
@@ -35,22 +39,25 @@ export class List extends Component {
 let divStyle = {
     borderStyle: 'solid',
     borderWidth: '1px',
-    borderRadius: '10%',
-    height: '320px',
+    borderRadius: '5%',
+    height: '260px',
+    width: '420px',
     overflowY: 'scroll',
     marginLeft: '10px',
     marginRight: '10px',
     display: 'grid',
-    gridTemplateColumns: '1fr .5fr .5fr',
-    gridTemplateRows: '.25fr 1fr',
+    gridTemplateColumns: '1fr',
+    // gridTemplateRows: '.25fr 1fr',
+    gridTemplateRows: '40',
     marginBottom: '20px',
-    marginTop: '40px',
+    marginTop: '20px',
     boxShadow: '10px 15px 35px #888888',
+    paddingBottom: '20px',
 }
 
 let headerStyle = {
-    margin: 0,
     // fontFamily: 'Permanent Marker, cursive',
+    margin: 0,
     justifySelf: 'center',
     alignSelf: 'center',
     fontFamily: 'Open Sans, sans-serif',
@@ -58,17 +65,35 @@ let headerStyle = {
     gridRow: 1
 }
 
+const spanStyle = {
+    margin: 0,
+    textAlign: 'left'
+}
+
+let header2Style = {
+    gridColumn: 2,
+    fontFamily: 'Open Sans, sans-serif',
+}
+
 let listStyle = {
-    listStyle: 'none',
+    // listStyle: 'none',
     margin: 0,
     padding: 0,
     gridColumn: 1,
-    gridRow: 2
+    gridRow: 2,
+    marginLeft: '10px'
 }
 
-let liStyle = {
+let titleStyle = {
     margin: 0,
     textAlign: 'left'
+}
+
+let liStyle2 = {
+    margin: 0,
+    textAlign: 'left',
+    gridColumStart: 2,
+    gridColumEnd: 2
 }
 
 export default List

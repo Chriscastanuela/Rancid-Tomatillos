@@ -54,7 +54,7 @@ export class ListSection extends Component {
             return (
                 // <section style={containerStyle}>
                     <section >
-                        <h1 style={{fontFamily: 'Permanent Marker, cursive', }}>Movies</h1>
+                        {/* <h1>Movies</h1> */}
                         <List header={'Most Recent'} list={this.state.recentMovies}/>
                         <List header={'Highest Rated'} list={this.state.highestRated}/>
                         <List header={'Lowest Rated'} list={this.state.lowestRated}/>  
