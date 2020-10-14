@@ -1,38 +1,28 @@
 import React, { Component } from 'react';
 
-export class List extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          list: [],
-          header: ''
-        };
-    }
-
-    render() {
-        if (!this.props.list[9]) {
-            return (
-                <div style={divStyle}>
-                </div>
-            )
-        } else {
-            return (
-                <div style={divStyle}>
-                    <h2 style={headerStyle}>{this.props.header}</h2>
-                    <ul style={listStyle}>
-                        {this.props.list.map(i => {
-                            return  (
-                                <span style={spanStyle}>
-                                    {/* <p style={titleStyle}>{i.title} Rating: {Math.floor(i.average_rating)}</p> */}
-                                    <h4 style={{margin: 3}}>{i.title}</h4>
-                                    <p style={{margin: 3}}>Rating: {Math.floor(i.average_rating)}</p>
-                                </span>
-                            )
-                        })}
-                    </ul>
-                </div>
-            )
-        }
+export default function List(props) {
+    if (!props.list[9]) {
+        return (
+            <div style={divStyle}>
+            </div>
+        )
+    } else {
+        return (
+            <div style={divStyle}>
+                <h2 style={headerStyle}>{props.header}</h2>
+                <ul style={listStyle}>
+                    {props.list.map(i => {
+                        return  (
+                            <span style={spanStyle}>
+                                {/* <p style={titleStyle}>{i.title} Rating: {Math.floor(i.average_rating)}</p> */}
+                                <h4 style={{margin: 3}}>{i.title}</h4>
+                                <p style={{margin: 3}}>Rating: {Math.floor(i.average_rating)}</p>
+                            </span>
+                        )
+                    })}
+                </ul>
+            </div>
+        )
     }
 }
 
@@ -96,7 +86,7 @@ let liStyle2 = {
     gridColumEnd: 2
 }
 
-export default List
+// export default List
 
 // componentDidMount() {
 //     let theArray = [];
