@@ -65,5 +65,6 @@ let movieSectionStyle = {
   marginBottom: '20px',
   marginTop: '20px',
   boxShadow: '10px 15px 35px #888888',
-  paddingBottom: '20px',
+  // paddingBottom: '10px',
+  paddingTop: '20px',
 }
