@@ -17,7 +17,7 @@ export default function Main() {
 let mainSectionStyle = {
   display: 'grid',
   gridTemplateRows: '1fr',
-  gridGap: '20px',
+  gridGap: '10px',
   alignContent: 'center',
   justifyContent: 'center',
 }
