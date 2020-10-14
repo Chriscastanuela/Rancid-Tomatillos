@@ -3,11 +3,11 @@ import React from 'react';
 export default function Login() {
     return (
         <section style={mainSectionStyle}>
-        <div style={divStyle}>
-            <input type="text" name="user" id="" placeholder='Username'/>
-            <input type="text" name="password" id="" placeholder='Password'/>
-            <button style={buttonStyle}>Login</button>
-        </div>
+            <div style={divStyle}>
+                <input type="text" name="user" id="" placeholder='Username' style={inputStyle}/>
+                <input type="text" name="password" id="" placeholder='Password' style={inputStyle}/>
+                <button style={buttonStyle}>Login</button>
+            </div>
         </section>
     )
 }
@@ -18,7 +18,11 @@ let mainSectionStyle = {
     gridGap: '10px',
     alignContent: 'center',
     justifyContent: 'center',
-  }
+}
+
+let inputStyle = {
+    fontFamily: 'Open Sans, sans-serif',
+}
 
 let divStyle = {
     borderStyle: 'solid',
