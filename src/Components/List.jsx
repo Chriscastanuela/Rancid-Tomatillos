@@ -18,7 +18,7 @@ export class List extends Component {
         } else {
             return (
                 <div style={divStyle}>
-                    <h3 style={{fontFamily: 'Permanent Marker, cursive',}}>{this.props.header}</h3>
+                    <h3 style={{fontFamily: 'Permanent Marker, cursive', gridColumn: 1}}>{this.props.header}</h3>
                     <ul style={listStyle}>
                         {this.props.list.map(i => {
                             return  <li>{i.title} {Math.floor(i.average_rating)}</li>
@@ -31,23 +31,29 @@ export class List extends Component {
 }
 
 let divStyle = {
-    minWidth: '305px',
+    // minWidth: '305px',
+    // width: '100%',
+    // borderStyle: 'solid',
+    // borderWidth: '1px',
+    // borderRadius: '25%',
+    // backgroundColor: '#f3eed9',
+    // boxShadow: '5px 10px 30px #888888',
     minHeight: '322px',
-    borderStyle: 'solid',
-    borderWidth: '1px',
-    padding: '10px',
-    borderRadius: '25%',
-    backgroundColor: '#f3eed9',
-    boxShadow: '5px 10px 30px #888888',
-    alignSelf: 'center',
-    justifySelf: 'center',
+    // padding: '10px',
+    // alignSelf: 'center',
+    // justifySelf: 'center',
     marginLeft: '10px',
     marginRight: '10px',
+    justifyContent: 'center',
+    alignContent: 'center',
+    display: 'grid',
+    gridTemplateColumns: '1fr .5fr .5fr .5fr'
 }
 
 let listStyle = {
     listStyle: 'none',
-    padding: '0'
+    padding: '0',
+    gridColumn: 1
 }
 
 export default List

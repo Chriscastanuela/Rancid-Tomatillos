@@ -49,13 +49,13 @@ export class ListSection extends Component {
             return <h1 style={{fontFamily: 'Kaushan Script, cursive',}}>Loading...</h1>
         } else {
             return (
-                <section style={containerStyle}>
-                    <section style={listSectionStyle}>
+                // <section style={containerStyle}>
+                    <section >
                         <List header={'Most Recent'} list={this.state.recentMovies}/>
                         <List header={'Highest Rated'} list={this.state.highestRated}/>
                         <List header={'Lowest Rated'} list={this.state.lowestRated}/>   
                     </section>
-                </section>
+                // </section>
             )
         }
     }
@@ -66,25 +66,26 @@ let containerStyle = {
     width: '350px',
 }
 
-let listSectionStyle = {
-    paddingLeft: '25px',
-    paddingRight: '25px',
-    borderRadius: '10%',
-    display: 'grid',
-    gridTemplateColumns: '1fr',
-    gridTemplateRows: '1fr',
-    height: '400px',
-    width: '325px',
-    overflowX: 'auto',
-    backgroundColor: '#d1d7dc',
-    boxShadow: '10px 15px 35px #888888',
-    borderStyle: 'solid',
-    borderWidth: '2px',
-    justifyContent: 'center',
-    alignContent: 'center',
-    gridColumn: 1,
-    display: 'flex'
-}
+// let listSectionStyle = {
+//     paddingLeft: '25px',
+//     paddingRight: '25px',
+//     borderRadius: '10%',
+//     display: 'grid',
+//     gridTemplateColumns: '1fr',
+//     gridTemplateRows: '1fr',
+//     height: '400px',
+//     // width: '325px',
+//     width: '100%',
+//     overflowX: 'auto',
+//     // backgroundColor: '#d1d7dc',
+//     boxShadow: '10px 15px 35px #888888',
+//     borderStyle: 'solid',
+//     borderWidth: '2px',
+//     justifyContent: 'center',
+//     alignContent: 'center',
+//     gridColumn: 1,
+    // display: 'flex'
+// }
 
 export default ListSection
 
