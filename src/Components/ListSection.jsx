@@ -49,14 +49,21 @@ export class ListSection extends Component {
             return <h1 style={{fontFamily: 'Kaushan Script, cursive',}}>Loading...</h1>
         } else {
             return (
-                <section style={listSectionStyle}>
-                    <List header={'Most Recent'} list={this.state.recentMovies}/>
-                    <List header={'Highest Rated'} list={this.state.highestRated}/>
-                    <List header={'Lowest Rated'} list={this.state.lowestRated}/>   
+                <section style={containerStyle}>
+                    <section style={listSectionStyle}>
+                        <List header={'Most Recent'} list={this.state.recentMovies}/>
+                        <List header={'Highest Rated'} list={this.state.highestRated}/>
+                        <List header={'Lowest Rated'} list={this.state.lowestRated}/>   
+                    </section>
                 </section>
             )
         }
     }
+}
+
+let containerStyle = {
+    height: '420px',
+    width: '350px',
 }
 
 let listSectionStyle = {
@@ -76,7 +83,7 @@ let listSectionStyle = {
     justifyContent: 'center',
     alignContent: 'center',
     gridColumn: 1,
-    // display: 'flex'
+    display: 'flex'
 }
 
 export default ListSection

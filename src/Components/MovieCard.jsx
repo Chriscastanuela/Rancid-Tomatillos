@@ -16,6 +16,7 @@ export class MovieCard extends Component {
         <img src={this.props.movie.poster_path} alt="Movie Poster" style={imgStyle}/>
         <div style={bodyStyle}>
           <p>{this.props.movie.title}</p>
+          <p>Average rating: {Math.floor(this.props.movie.average_rating)}/10</p>
         </div>
       </div>
     )
