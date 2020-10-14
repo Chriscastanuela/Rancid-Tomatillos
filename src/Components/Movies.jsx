@@ -21,9 +21,13 @@ export default class Movies extends Component {
         <h1 style={{fontFamily: 'Permanent Marker, cursive',}}>Loading</h1>
         ) : (
           <section className='MovieContainer' style={movieSectionStyle}>
-            {this.state.allMovies.map((movie) => (
-              <MovieCard key={movie.id} movie={movie}/>
-            ))}
+            {this.state.allMovies.map((movie) => movie
+            ).sort((a,b) => {
+              console.log(a.title)
+              return a.title.localeCompare(b.title)
+          }).map((movie) => (
+            <MovieCard key={movie.id} movie={movie}/>
+          ))}
           </section>
         )}
       </section>
