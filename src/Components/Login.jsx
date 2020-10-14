@@ -1,15 +1,43 @@
 import React from 'react';
+import { Component } from 'react';
 
-export default function Login() {
-    return (
-        <section style={mainSectionStyle}>
-            <div style={divStyle}>
-                <input type="text" name="user" id="" placeholder='Username' style={inputStyle}/>
-                <input type="text" name="password" id="" placeholder='Password' style={inputStyle}/>
-                <button style={buttonStyle}>Login</button>
-            </div>
-        </section>
-    )
+export default class Login extends Component {
+    constructor() {
+        super();
+        this.state = {
+            email: '',
+            password: ''
+        }
+    }
+    sendLogin() {
+        let thePost = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(
+                {
+                    email: '', 
+                    password: ''
+                }
+            )
+        }
+        fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies', thePost)
+    }
+    formUpdate(e) {
+        this.setState({[e.target.name]: e.target.value});
+    }
+    render() {
+        return (
+            <section style={mainSectionStyle}>
+                <div style={divStyle}>
+                    <input type="text" name="email" id="" placeholder='Username' style={inputStyle} value={this.state.email} onChange={(e) => this.formUpdate(e)}/>
+                    <input type="text" name="password" id="" placeholder='Password' style={inputStyle} value={this.state.password} onChange={(e) => this.formUpdate(e)}/>
+                    <button style={buttonStyle}>Login</button>
+                </div>
+            </section>
+        )
+    }
 }
 
 let mainSectionStyle = {
@@ -42,5 +70,6 @@ let divStyle = {
 }
 
 let buttonStyle = {
-    cursor: 'pointer'
+    cursor: 'pointer',
+    fontFamily: 'Open Sans, sans-serif',
 }
