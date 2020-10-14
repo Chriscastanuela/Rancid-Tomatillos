@@ -6,14 +6,14 @@ export default function Main() {
   return (
     <section style={mainSectionStyle}>
       <ListSection />
-      <Movies />
+      {/* <Movies /> */}
     </section>
   )
 }
 
 let mainSectionStyle = {
   display: 'grid',
-  gridTemplateRows: '.5fr .5fr',
+  gridTemplateRows: '1fr',
   gridGap: '20px',
   alignContent: 'center',
   justifyContent: 'center',

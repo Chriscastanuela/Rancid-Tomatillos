@@ -36,13 +36,15 @@ let divStyle = {
     borderStyle: 'solid',
     borderWidth: '1px',
     borderRadius: '10%',
-    minHeight: '322px',
+    height: '320px',
+    overflowY: 'scroll',
     marginLeft: '10px',
     marginRight: '10px',
     display: 'grid',
     gridTemplateColumns: '1fr .5fr .5fr',
     gridTemplateRows: '.25fr 1fr',
     marginBottom: '20px',
+    marginTop: '40px',
     boxShadow: '10px 15px 35px #888888',
 }
 
@@ -59,7 +61,6 @@ let headerStyle = {
 let listStyle = {
     listStyle: 'none',
     margin: 0,
-    // // marginBottom: '13px',
     padding: 0,
     gridColumn: 1,
     gridRow: 2
