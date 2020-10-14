@@ -2,13 +2,23 @@ import React from 'react';
 
 export default function Login() {
     return (
+        <section style={mainSectionStyle}>
         <div style={divStyle}>
             <input type="text" name="user" id="" placeholder='Username'/>
             <input type="text" name="password" id="" placeholder='Password'/>
             <button style={buttonStyle}>Login</button>
         </div>
+        </section>
     )
 }
+
+let mainSectionStyle = {
+    display: 'grid',
+    gridTemplateRows: '1fr',
+    gridGap: '10px',
+    alignContent: 'center',
+    justifyContent: 'center',
+  }
 
 let divStyle = {
     borderStyle: 'solid',
