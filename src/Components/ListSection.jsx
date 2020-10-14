@@ -21,6 +21,9 @@ export class ListSection extends Component {
                 let theMovies = res.movies;
                 let newArr = theMovies.map(i => {
                     return i
+                }).sort((a,b) => {
+                    console.log(a.title)
+                    return a.title.localeCompare(b.title)
                 });
                 this.setState({all: newArr});
                 this.getAList(theMovies.sort((a,b) => {
