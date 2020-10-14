@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import { Container, CardDeck } from 'react-bootstrap'
 import MovieCard from './MovieCard.jsx'
 
 export default class Movies extends Component {

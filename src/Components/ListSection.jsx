@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import List from './List';
-import { Container, Row, Col } from 'react-bootstrap'
+
 
 export class ListSection extends Component {
     constructor() {

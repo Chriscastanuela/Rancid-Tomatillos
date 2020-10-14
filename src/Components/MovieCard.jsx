@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Card } from 'react-bootstrap'
 
 export class MovieCard extends Component {
   render() {
