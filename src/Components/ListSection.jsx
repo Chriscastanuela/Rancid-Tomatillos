@@ -55,15 +55,12 @@ export class ListSection extends Component {
             return <h1 style={{fontFamily: 'Permanent Marker, cursive',}}>Loading...</h1>
         } else {
             return (
-                // <section style={containerStyle}>
-                    <section >
-                        {/* <h1>Movies</h1> */}
-                        <List header={'Most Recent'} list={this.state.recentMovies}/>
-                        <List header={'Highest Rated'} list={this.state.highestRated}/>
-                        <List header={'Lowest Rated'} list={this.state.lowestRated}/>  
-                        <List header={'All'} list={this.state.all}/>   
-                    </section>
-                // </section>
+                <section>
+                    <List header={'Most Recent'} list={this.state.recentMovies}/>
+                    <List header={'Highest Rated'} list={this.state.highestRated}/>
+                    <List header={'Lowest Rated'} list={this.state.lowestRated}/>  
+                    <List header={'All'} list={this.state.all}/>   
+                </section>
             )
         }
     }

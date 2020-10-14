@@ -36,20 +36,6 @@ export default class Movies extends Component {
 }
 
 let movieSectionStyle = {
-  // borderRadius: '10%',
-  // height: '466px',
-  // width: '378px',
-  // overflowX: 'auto',
-  // boxShadow: '10px 15px 35px #888888',
-  // borderStyle: 'solid',
-  // borderWidth: '2px',
-  // justifyContent: 'center',
-  // alignContent: 'center',
-  // justifySelf: 'center',
-  // alignSelf: 'center',
-  // margin: 0,
-  // padding: 0,
-  // gridColumn: 1,
   borderStyle: 'solid',
   borderWidth: '1px',
   borderRadius: '5%',
@@ -60,11 +46,10 @@ let movieSectionStyle = {
   marginRight: '10px',
   display: 'grid',
   gridTemplateColumns: '1fr',
-  // gridTemplateRows: '.25fr 1fr',
   gridTemplateRows: '40',
   marginBottom: '20px',
   marginTop: '20px',
   boxShadow: '10px 15px 35px #888888',
-  // paddingBottom: '10px',
   paddingTop: '20px',
+  backgroundColor: '#F3EED9'
 }

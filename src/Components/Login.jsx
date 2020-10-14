@@ -27,7 +27,6 @@ export default class Login extends Component {
         console.log(thePost)
         fetch('https://rancid-tomatillos.herokuapp.com/api/v2/login', thePost)
             .then(res => console.log(res.json()))
-            // .then(res => console.log())
             .catch(err => console.log(err))
     }
     formUpdate(e) {
@@ -56,26 +55,35 @@ let mainSectionStyle = {
 
 let inputStyle = {
     fontFamily: 'Open Sans, sans-serif',
+    marginTop: '2%',
+    width: '200px',
+    height: '40px',
+    placeSelf: 'center'
 }
 
 let divStyle = {
     borderStyle: 'solid',
     borderWidth: '1px',
-    borderRadius: '5%',
+    borderRadius: '15%',
     height: '260px',
-    width: '420px',
+    width: '320px',
     overflowY: 'scroll',
     display: 'grid',
     gridTemplateColumns: '1fr',
     gridTemplateRows: '40',
-    marginBottom: '20px',
+    marginBottom: '210px',
     marginTop: '20px',
     boxShadow: '10px 15px 35px #888888',
     paddingBottom: '20px',
-    placeSelf: 'center'
+    placeSelf: 'center',
+    backgroundColor: '#F3EED9'
 }
 
 let buttonStyle = {
     cursor: 'pointer',
     fontFamily: 'Open Sans, sans-serif',
+    width: '150px',
+    height: '40px',
+    placeSelf: 'center',
+    borderRadius: '5%',
 }

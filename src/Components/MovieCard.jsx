@@ -3,20 +3,9 @@ import React, { Component } from 'react'
 export class MovieCard extends Component {
   render() {
     return (
-      // <Card style={{ width: '12rem', padding: 'auto', justifySelf: 'center', marginBottom: '20px', marginTop: '20px'}}>
-
-      //   <Card.Body style={bodyStyle}>
-      //     <Card.Title>{this.props.movie.title}</Card.Title>
-      //     <Card.Subtitle>
-      //       Average rating: {Math.floor(this.props.movie.average_rating)}/10
-      //     </Card.Subtitle>
-      //   </Card.Body>
-      // </Card>
       <div style={divStyle}>
         <img src={this.props.movie.poster_path} alt="Movie Poster" style={imgStyle}/>
         <div style={bodyStyle}>
-          {/* <p>{this.props.movie.title}</p>
-          <p>Average rating: {Math.floor(this.props.movie.average_rating)}/10</p> */}
         </div>
       </div>
     )
