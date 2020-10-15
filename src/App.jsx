@@ -15,6 +15,9 @@ export class App extends Component {
       isLoggedIn: false
     }
   }
+  updateState(state, newState) {
+    this.setState({[state]: newState});
+  }
   render() {
     return (
       <Router>
@@ -22,7 +25,7 @@ export class App extends Component {
         <Header />
         <Route exact path='/' render={props => (
           <React.Fragment>
-            <Main user={this.state.user}/>
+            <Main user={this.state.user} isLoggedIn={this.state.isLoggedIn} />
           </React.Fragment>
         )} />
         <Route path='/login' component={Login}/>

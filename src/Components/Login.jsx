@@ -6,7 +6,7 @@ export default class Login extends Component {
         super();
         this.state = {
             email: '',
-            password: ''
+            password: '',
         }
     }
     //name: 'Claire', email: 'claire@turing.io', password: 'qwer1234'
@@ -27,7 +27,9 @@ export default class Login extends Component {
         console.log(thePost)
         fetch('https://rancid-tomatillos.herokuapp.com/api/v2/login', thePost)
             .then(res => res.json())
-            .then(res => console.log(res, "Hello"))
+            .then(res => {
+                this.setState({email})
+            })
             .catch(err => console.log(err))
     }
     formUpdate(e) {
