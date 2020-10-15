@@ -11,6 +11,7 @@ export class ListSection extends Component {
           highestRated: [],
           all: [],
           movieData: [],
+          userRatings: [],
         };
     }
 

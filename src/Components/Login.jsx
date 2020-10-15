@@ -1,5 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 export default class Login extends Component {
     constructor(props) {
@@ -28,7 +29,8 @@ export default class Login extends Component {
         fetch('https://rancid-tomatillos.herokuapp.com/api/v2/login', thePost)
             .then(res => res.json())
             .then(res => {
-                this.setState({email})
+                this.props.theUpdater('user', res.user);
+                this.props.theUpdater('isLoggedIn', true);
             })
             .catch(err => console.log(err))
     }
@@ -36,15 +38,22 @@ export default class Login extends Component {
         this.setState({[e.target.name]: e.target.value});
     }
     render() {
-        return (
-            <section style={mainSectionStyle}>
-                <div style={divStyle}>
-                    <input type="text" name="email" id="" placeholder='Username' style={inputStyle} value={this.state.email} onChange={(e) => this.formUpdate(e)} autocomplete="off"/>
-                    <input type="password" name="password" id="" placeholder='Password' style={inputStyle} value={this.state.password} onChange={(e) => this.formUpdate(e)} autocomplete="off"/>
-                    <button style={buttonStyle} onClick={() => this.sendLogin()}>Login</button>
-                </div>
-            </section>
-        )
+        if (!this.props.isLoggedIn) {
+            return (
+                <section style={mainSectionStyle}>
+                    {console.log(this.props)}
+                    <div style={divStyle}>
+                        <input type="text" name="email" id="" placeholder='Username' style={inputStyle} value={this.state.email} onChange={(e) => this.formUpdate(e)} autocomplete="off"/>
+                        <input type="password" name="password" id="" placeholder='Password' style={inputStyle} value={this.state.password} onChange={(e) => this.formUpdate(e)} autocomplete="off"/>
+                        <button style={buttonStyle} onClick={() => this.sendLogin()}>Login</button>
+                    </div>
+                </section>
+            )
+        } else {
+            return (
+                <Redirect to='/'/>
+            )
+        }
     }
 }
 

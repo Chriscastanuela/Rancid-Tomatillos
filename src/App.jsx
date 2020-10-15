@@ -15,7 +15,7 @@ export class App extends Component {
       isLoggedIn: false
     }
   }
-  updateState(state, newState) {
+  theUpdater = (state, newState) => {
     this.setState({[state]: newState});
   }
   render() {
@@ -29,7 +29,7 @@ export class App extends Component {
           </React.Fragment>
         )} />
         <Route path='/login' render={props => (
-          <Login updateState={this.updateState}/>
+          <Login theUpdater={this.theUpdater} isLoggedIn={this.state.isLoggedIn}/>
         )
         }/>
         <Footer />
