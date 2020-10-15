@@ -66,7 +66,7 @@ let mainSectionStyle = {
 }
 
 let inputStyle = {
-    fontFamily: 'Open Sans, sans-serif',
+    fontFamily: 'Permanent Marker, cursive',
     marginTop: '2%',
     width: '200px',
     height: '40px',
@@ -94,6 +94,7 @@ let divStyle = {
 let buttonStyle = {
     cursor: 'pointer',
     fontFamily: 'Open Sans, sans-serif',
+    // fontFamily: 'Permanent Marker, cursive',
     width: '150px',
     height: '40px',
     placeSelf: 'center',
