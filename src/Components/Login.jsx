@@ -26,7 +26,8 @@ export default class Login extends Component {
         }
         console.log(thePost)
         fetch('https://rancid-tomatillos.herokuapp.com/api/v2/login', thePost)
-            .then(res => console.log(res.json()))
+            .then(res => res.json())
+            .then(res => console.log(res, "Hello"))
             .catch(err => console.log(err))
     }
     formUpdate(e) {
@@ -36,8 +37,8 @@ export default class Login extends Component {
         return (
             <section style={mainSectionStyle}>
                 <div style={divStyle}>
-                    <input type="text" name="email" id="" placeholder='Username' style={inputStyle} value={this.state.email} onChange={(e) => this.formUpdate(e)}/>
-                    <input type="text" name="password" id="" placeholder='Password' style={inputStyle} value={this.state.password} onChange={(e) => this.formUpdate(e)}/>
+                    <input type="text" name="email" id="" placeholder='Username' style={inputStyle} value={this.state.email} onChange={(e) => this.formUpdate(e)} autocomplete="off"/>
+                    <input type="password" name="password" id="" placeholder='Password' style={inputStyle} value={this.state.password} onChange={(e) => this.formUpdate(e)} autocomplete="off"/>
                     <button style={buttonStyle} onClick={() => this.sendLogin()}>Login</button>
                 </div>
             </section>
@@ -64,7 +65,7 @@ let inputStyle = {
 let divStyle = {
     borderStyle: 'solid',
     borderWidth: '1px',
-    borderRadius: '15%',
+    borderRadius: '5%',
     height: '260px',
     width: '320px',
     overflowY: 'scroll',
