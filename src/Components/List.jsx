@@ -1,55 +1,89 @@
 import React, { Component } from 'react';
 
-export class List extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          list: [],
-          header: ''
-        };
-    }
-
-    render() {
-        if (!this.props.list[9]) {
-            return (
-                <h1 style={{fontFamily: 'Kaushan Script, cursive'}}>Loading...</h1>
-            )
-        } else {
-            return (
-                <div style={divStyle}>
-                    <h1 style={{fontFamily: 'Kaushan Script, cursive'}}>{this.props.header}</h1>
-                    <ul style={listStyle}>
-                        {this.props.list.map(i => {
-                            return  <li>{i.title} {Math.floor(i.average_rating)}</li>
-                        })}
-                    </ul>
-                </div>
-            )
-        }
+export default function List(props) {
+    if (!props.list[9]) {
+        return (
+            <div style={divStyle}>
+            </div>
+        )
+    } else {
+        return (
+            <div style={divStyle}>
+                <h2 style={headerStyle}>{props.header}</h2>
+                <ul style={listStyle}>
+                    {props.list.map(i => {
+                        return  (
+                            <span style={spanStyle}>
+                                <h4 style={{margin: 3}}>{i.title}</h4>
+                                <p style={{margin: 3}}>Rating: {Math.floor(i.average_rating)}</p>
+                            </span>
+                        )
+                    })}
+                </ul>
+            </div>
+        )
     }
 }
 
 let divStyle = {
-    margin: '15px',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    minWidth: '260px',
-    maxWidth: '330px',
-    height: '350px',
     borderStyle: 'solid',
     borderWidth: '1px',
-    padding: '10px',
-    borderRadius: '25%',
-    backgroundColor: '#f3eed9',
-    boxShadow: '5px 10px 30px #888888',
+    borderRadius: '5%',
+    height: '260px',
+    width: '420px',
+    overflowY: 'scroll',
+    marginLeft: '10px',
+    marginRight: '10px',
+    display: 'grid',
+    gridTemplateColumns: '1fr',
+    gridTemplateRows: '40',
+    marginBottom: '20px',
+    marginTop: '20px',
+    boxShadow: '10px 15px 35px #888888',
+    paddingBottom: '20px',
+    backgroundColor: '#F3EED9'
+}
+
+let headerStyle = {
+    margin: 0,
+    justifySelf: 'center',
+    alignSelf: 'center',
+    fontFamily: 'Open Sans, sans-serif',
+    gridColumn: 1,
+    gridRow: 1
+}
+
+const spanStyle = {
+    margin: 0,
+    textAlign: 'left'
+}
+
+let header2Style = {
+    gridColumn: 2,
+    fontFamily: 'Open Sans, sans-serif',
 }
 
 let listStyle = {
-    listStyle: 'none',
-    padding: '0'
+    margin: 0,
+    padding: 0,
+    gridColumn: 1,
+    gridRow: 2,
+    marginLeft: '10px'
 }
 
-export default List
+let titleStyle = {
+    margin: 0,
+    textAlign: 'left'
+}
+
+let liStyle2 = {
+    margin: 0,
+    textAlign: 'left',
+    gridColumStart: 2,
+    gridColumEnd: 2
+}
+
+// export default List
 
 // componentDidMount() {
 //     let theArray = [];

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import List from './List';
-import { Container, Row, Col } from 'react-bootstrap'
+
 
 export class ListSection extends Component {
     constructor() {
@@ -9,6 +9,7 @@ export class ListSection extends Component {
           recentMovies: [],
           lowestRated: [],
           highestRated: [],
+          all: [],
           movieData: [],
         };
     }
@@ -18,7 +19,13 @@ export class ListSection extends Component {
             .then(response => response.json())
             .then(res => {
                 let theMovies = res.movies;
-                
+                let newArr = theMovies.map(i => {
+                    return i
+                }).sort((a,b) => {
+                    console.log(a.title)
+                    return a.title.localeCompare(b.title)
+                });
+                this.setState({all: newArr});
                 this.getAList(theMovies.sort((a,b) => {
                     return b.release_date - a.release_date;
                 }), 'recentMovies');
@@ -28,7 +35,6 @@ export class ListSection extends Component {
                 this.getAList(theMovies.sort((a,b) => {
                     return b.average_rating - a.average_rating;
                 }), 'highestRated')
-                
                 console.log(this.state);
         })
     }
@@ -46,34 +52,44 @@ export class ListSection extends Component {
     
     render() {
         if (!this.state.movieData) {
-            return <h1 style={{fontFamily: 'Kaushan Script, cursive',}}>Loading...</h1>
+            return <h1 style={{fontFamily: 'Permanent Marker, cursive',}}>Loading...</h1>
         } else {
             return (
-                <Container>
-                    <Row>
-                        <Col >
-                            <List header={'Most Recent'} list={this.state.recentMovies}/>
-                        </Col>
-                        <Col>
-                            <List header={'Highest Rated'} list={this.state.highestRated}/>
-                        </Col>
-                        <Col>
-                            <List header={'Lowest Rated'} list={this.state.lowestRated}/>   
-                        </Col>
-                    </Row>
-                </Container>
-    
+                <section>
+                    <List header={'Most Recent'} list={this.state.recentMovies}/>
+                    <List header={'Highest Rated'} list={this.state.highestRated}/>
+                    <List header={'Lowest Rated'} list={this.state.lowestRated}/>  
+                    <List header={'All'} list={this.state.all}/>   
+                </section>
             )
         }
     }
 }
 
+let containerStyle = {
+    height: '420px',
+    width: '350px',
+}
+
 // let listSectionStyle = {
-//     paddingTop: '15px',
+//     paddingLeft: '25px',
+//     paddingRight: '25px',
+//     borderRadius: '10%',
 //     display: 'grid',
-//     gridTemplateRows: '1fr 1fr 1fr',
+//     gridTemplateColumns: '1fr',
+//     gridTemplateRows: '1fr',
+//     height: '400px',
+//     // width: '325px',
+//     width: '100%',
+//     overflowX: 'auto',
+//     // backgroundColor: '#d1d7dc',
+//     boxShadow: '10px 15px 35px #888888',
+//     borderStyle: 'solid',
+//     borderWidth: '2px',
 //     justifyContent: 'center',
 //     alignContent: 'center',
+//     gridColumn: 1,
+    // display: 'flex'
 // }
 
 export default ListSection

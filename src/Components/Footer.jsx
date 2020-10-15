@@ -16,12 +16,15 @@ const sectionStyle = {
     borderRight: 'none',
     borderBottom: 'none',
     borderWidth: '1px',
-    backgroundColor: '#fa5252'
+    backgroundColor: '#fa5252',
+    height: '80px',
+    marginTop: '30px'
 }
 
 const headerStyle = {
-    fontFamily: 'Kaushan Script, cursive',
+    fontFamily: 'Permanent Marker, cursive',
     fontSize: '30px',
     gridColumn: '2',
     alignSelf: 'center',
+    margin: 0
 }

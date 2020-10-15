@@ -1,22 +1,40 @@
 import React, { Component } from 'react'
-import { Card } from 'react-bootstrap'
 
 export class MovieCard extends Component {
   render() {
     return (
-      <div>
-      <Card style={{ width: '12rem', padding: 'auto', justifySelf: 'center'}}>
-        <Card.Img variant="top" src={this.props.movie.poster_path} />
-        <Card.Body>
-          <Card.Title>{this.props.movie.title}</Card.Title>
-          <Card.Subtitle>
-            Average rating: {this.props.movie.average_rating}/10
-          </Card.Subtitle>
-        </Card.Body>
-      </Card>
+      <div style={divStyle}>
+        <img src={this.props.movie.poster_path} alt="Movie Poster" style={imgStyle}/>
+        <div style={bodyStyle}>
+        </div>
       </div>
     )
   }
+}
+
+let divStyle = { 
+  height: '500px',
+  width: '350px',
+  justifySelf: 'Center',
+  alignSelf: 'center',
+  margin: 0
+}
+
+let imgStyle = {
+  height: '450px',
+  width: '282px',
+  margin: 0,
+}
+
+const bodyStyle = {
+  overflowX: 'scroll',
+  overflowY: 'hidden',
+  maxHeight: '91px',
+  width: '282px',
+  whiteSpace: 'nowrap',
+  margin: 0,
+  justifySelf: 'center',
+  alignSelf: 'center',
 }
 
 export default MovieCard
