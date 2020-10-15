@@ -12,7 +12,6 @@ export default class Login extends Component {
     }
     //name: 'Claire', email: 'claire@turing.io', password: 'qwer1234'
     sendLogin() {
-        console.log(this.state)
         let thePost = {
             method: 'POST',
             headers: {
@@ -25,12 +24,13 @@ export default class Login extends Component {
                 }
             )
         }
-        console.log(thePost)
         fetch('https://rancid-tomatillos.herokuapp.com/api/v2/login', thePost)
             .then(res => res.json())
             .then(res => {
-                this.props.theUpdater('user', res.user);
-                this.props.theUpdater('isLoggedIn', true);
+                if (res.user) {
+                    this.props.theUpdater('user', res.user);
+                    this.props.theUpdater('isLoggedIn', true);
+                }
             })
             .catch(err => console.log(err))
     }
