@@ -14,9 +14,17 @@ export default function List(props) {
                 <h2 style={headerStyle}>{props.header}</h2>
                 <ul style={listStyle}>
                     {props.list.map(i => {
+                        let emoji = null;
+                        if (i.average_rating < 5) {
+                            emoji =  '🤮';
+                        } if (i.average_rating >= 5 && i.average_rating < 8) {
+                            emoji = '🤨'
+                        } if (i.average_rating >= 8) {
+                            emoji =  '🤩'
+                        }
                         return  (
                             <span style={spanStyle}>
-                                <h4 style={{margin: 3}}>{i.title}</h4>
+                                <h4 style={{margin: 3}}>{i.title} {emoji}</h4>
                                 <p style={{margin: 3}}>Rating: {Math.floor(i.average_rating)}</p>
                                 <p style={{margin: 3}}>Release Date: {i.release_date}</p>
                             </span>

@@ -83,7 +83,7 @@ let divStyle = {
     display: 'grid',
     gridTemplateColumns: '1fr',
     gridTemplateRows: '40',
-    marginBottom: '210px',
+    marginBottom: '170px',
     marginTop: '20px',
     boxShadow: '10px 15px 35px #888888',
     paddingBottom: '20px',
