@@ -28,7 +28,10 @@ export class App extends Component {
             <Main user={this.state.user} isLoggedIn={this.state.isLoggedIn} />
           </React.Fragment>
         )} />
-        <Route path='/login' component={Login}/>
+        <Route path='/login' render={props => (
+          <Login updateState={this.updateState}/>
+        )
+        }/>
         <Footer />
       </div>
     </Router>

@@ -2,8 +2,8 @@ import React from 'react';
 import { Component } from 'react';
 
 export default class Login extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             email: '',
             password: '',
