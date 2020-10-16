@@ -57,10 +57,10 @@ export class ListSection extends Component {
             return (
                 <section>
                     <List isLoggedIn={this.props.isLoggedIn} header={'Your Ratings'} list={this.state.userRatings}/>
-                    <List isLoggedIn={this.props.isLoggedIn} header={'Most Recent'} list={this.state.recentMovies}/>
-                    <List isLoggedIn={this.props.isLoggedIn} header={'Highest Rated'} list={this.state.highestRated}/>
-                    <List isLoggedIn={this.props.isLoggedIn} header={'Lowest Rated'} list={this.state.lowestRated}/>
-                    <List isLoggedIn={this.props.isLoggedIn} header={'All Movies'} list={this.state.all}/>
+                    <List isLoggedIn={this.props.isLoggedIn} header={'New Releases'} list={this.state.recentMovies}/>
+                    <List isLoggedIn={this.props.isLoggedIn} header={'Fan Favorites'} list={this.state.highestRated}/>
+                    <List isLoggedIn={this.props.isLoggedIn} header={'Rancid Tomatillos'} list={this.state.lowestRated}/>
+                    <List isLoggedIn={this.props.isLoggedIn} header={'All'} list={this.state.all}/>
                 </section>
             )
         }

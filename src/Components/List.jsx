@@ -62,7 +62,7 @@ let divStyle = {
 }
 
 let headerStyle = {
-    margin: 0,
+    margin: 5,
     justifySelf: 'center',
     alignSelf: 'center',
     fontFamily: 'Open Sans, sans-serif',
