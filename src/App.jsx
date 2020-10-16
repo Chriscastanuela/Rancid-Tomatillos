@@ -22,7 +22,7 @@ export class App extends Component {
     return (
       <Router>
       <div className="App">
-        <Header isLoggedIn={this.state.isLoggedIn}/>
+        <Header isLoggedIn={this.state.isLoggedIn} theUpdater={this.theUpdater}/>
         <Route exact path='/' render={props => (
           <React.Fragment>
             <Main user={this.state.user} isLoggedIn={this.state.isLoggedIn} />

@@ -23,7 +23,6 @@ export class ListSection extends Component {
                 let newArr = theMovies.map(i => {
                     return i
                 }).sort((a,b) => {
-                    console.log(a.title)
                     return a.title.localeCompare(b.title)
                 });
                 this.setState({all: newArr});
