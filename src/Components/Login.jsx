@@ -8,6 +8,8 @@ export default class Login extends Component {
         this.state = {
             email: '',
             password: '',
+            failedLogin: '',
+            
         }
     }
     //name: 'Claire', email: 'claire@turing.io', password: 'qwer1234'
@@ -30,6 +32,8 @@ export default class Login extends Component {
                 if (res.user) {
                     this.props.theUpdater('user', res.user);
                     this.props.theUpdater('isLoggedIn', true);
+                } else {
+                    this.setState({failedLogin: 'Username or password incorrect'})
                 }
             })
             .catch(err => console.log(err))
@@ -46,6 +50,7 @@ export default class Login extends Component {
                         <input type="text" name="email" id="" placeholder='Username' style={inputStyle} value={this.state.email} onChange={(e) => this.formUpdate(e)} autocomplete="off"/>
                         <input type="password" name="password" id="" placeholder='Password' style={inputStyle} value={this.state.password} onChange={(e) => this.formUpdate(e)} autocomplete="off"/>
                         <button style={buttonStyle} onClick={() => this.sendLogin()}>Login</button>
+                        <p>{this.state.failedLogin}</p>
                     </div>
                 </section>
             )
