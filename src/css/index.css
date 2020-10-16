@@ -25,6 +25,30 @@ code {
   margin: 0
 }
 
+.PostersH {
+  font-family: Permanent Marker, cursive;
+  margin: 0
+}
+
+.MovieContainer {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5%;
+  height: 600px;
+  width: 420px;
+  overflow-y: scroll;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  box-shadow: 10px 15px 35px #888888;
+  padding-top: 20px;
+  background-color: #F3EED9;
+}
+
 @media screen and (min-width: 900px) {
   .MainSection {
     display: grid;
@@ -41,5 +65,32 @@ code {
   }
   .ListSection {
     grid-column: 1;
+    align-self: center;
+    justify-self: center;
+  }
+  .PostersH {
+    font-family: Permanent Marker, cursive;
+    margin: 0;
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .MovieSection {
+    grid-column: 2;
+    justify-self: center;
+  }
+  .MovieContainer {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 1.5%;
+    height: 1470px;
+    width: 420px;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40;
+    margin-top: 20px;
+    box-shadow: 10px 15px 35px #888888;
+    padding-top: 20px;
+    background-color: #F3EED9;
   }
 }
