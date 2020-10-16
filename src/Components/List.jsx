@@ -31,8 +31,8 @@ export default function List(props) {
                         return  (
                             <span style={spanStyle}>
                                 <h4 style={{margin: 3}}>{i.title}</h4>
-                                <p style={{margin: 3}}>Rating: {theEmoji}</p>
                                 <p style={{margin: 3}}>Release Date: {i.release_date}</p>
+                                <p style={{margin: 3}}>Rating: {theEmoji}</p><br/>
                             </span>
                         )
                     })}
@@ -72,7 +72,7 @@ let headerStyle = {
 
 const spanStyle = {
     margin: 0,
-    textAlign: 'left'
+    textAlign: 'left',
 }
 
 let header2Style = {

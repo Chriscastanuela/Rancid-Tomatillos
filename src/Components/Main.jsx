@@ -7,6 +7,7 @@ export default function Main(props) {
     <section style={mainSectionStyle}>
       <h1 style={{fontFamily: 'Permanent Marker, cursive', margin: 0}}>Categories</h1>
       <ListSection isLoggedIn={props.isLoggedIn} user={props.user}/>
+      <h1 style={{fontFamily: 'Permanent Marker, cursive', margin: 0}}>Movie Pages</h1>
       <Movies />
     </section>
   )
