@@ -56,11 +56,11 @@ export class ListSection extends Component {
         } else {
             return (
                 <section>
+                    <List isLoggedIn={this.props.isLoggedIn} header={'Your Ratings'} list={this.state.userRatings}/>
                     <List isLoggedIn={this.props.isLoggedIn} header={'Most Recent'} list={this.state.recentMovies}/>
                     <List isLoggedIn={this.props.isLoggedIn} header={'Highest Rated'} list={this.state.highestRated}/>
                     <List isLoggedIn={this.props.isLoggedIn} header={'Lowest Rated'} list={this.state.lowestRated}/>
-                    <List isLoggedIn={this.props.isLoggedIn} header={'Your Ratings'} list={this.state.userRatings}/>
-                    <List isLoggedIn={this.props.isLoggedIn} header={'All'} list={this.state.all}/>
+                    <List isLoggedIn={this.props.isLoggedIn} header={'All Movies'} list={this.state.all}/>
                 </section>
             )
         }

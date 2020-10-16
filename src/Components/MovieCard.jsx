@@ -13,17 +13,17 @@ export class MovieCard extends Component {
 }
 
 let divStyle = { 
-  height: '500px',
-  width: '350px',
+  height: '450px',
+  width: '282px',
   justifySelf: 'Center',
   alignSelf: 'center',
-  margin: 0
+  marginBottom: '20px',
+  boxShadow: '15px 20px 40px #888888',
 }
 
 let imgStyle = {
   height: '450px',
   width: '282px',
-  margin: 0,
 }
 
 const bodyStyle = {
