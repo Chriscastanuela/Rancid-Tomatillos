@@ -55,7 +55,7 @@ export class ListSection extends Component {
             return <h1 style={{fontFamily: 'Permanent Marker, cursive',}}>Loading...</h1>
         } else {
             return (
-                <section>
+                <section className='ListSection'>
                     <List isLoggedIn={this.props.isLoggedIn} header={'Your Ratings'} list={this.state.userRatings}/>
                     <List isLoggedIn={this.props.isLoggedIn} header={'New Releases'} list={this.state.recentMovies}/>
                     <List isLoggedIn={this.props.isLoggedIn} header={'Fan Favorites'} list={this.state.highestRated}/>

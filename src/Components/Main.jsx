@@ -4,26 +4,13 @@ import Movies from './Movies.jsx'
 
 export default function Main(props) {
   return (
-    <section className='MainSection' style={mainSectionStyle}>
-      <h1 className='CategoriesH' style={categoriesHeaderStyle}>Categories</h1>
+    <section className='MainSection' >
+      <h1 className='CategoriesH' >Categories</h1>
       <ListSection isLoggedIn={props.isLoggedIn} user={props.user}/>
       <h1 className='PostersH' style={{fontFamily: 'Permanent Marker, cursive', margin: 0}}>Movie Pages</h1>
       <Movies />
     </section>
   )
-}
-
-let mainSectionStyle = {
-  // display: 'grid',
-  // gridTemplateRows: '1fr',
-  // gridGap: '10px',
-  // alignContent: 'center',
-  // justifyContent: 'center', 
-}
-
-let categoriesHeaderStyle = {
-  fontFamily: 'Permanent Marker, cursive', 
-  margin: 0
 }
 
 

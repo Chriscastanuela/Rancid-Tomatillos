@@ -20,6 +20,11 @@ code {
   justify-content: center;
 }
 
+.CategoriesH {
+  font-family: Permanent Marker, cursive;
+  margin: 0
+}
+
 @media screen and (min-width: 900px) {
   .MainSection {
     display: grid;
@@ -28,5 +33,13 @@ code {
     grid-column-gap: 20px;
     align-content: center;
     justify-content: center;
+  }
+  .CategoriesH {
+    font-family: Permanent Marker, cursive;
+    margin: 0;
+    grid-column: 1;
+  }
+  .ListSection {
+    grid-column: 1;
   }
 }
