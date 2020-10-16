@@ -49,7 +49,7 @@ code {
   background-color: #F3EED9;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 890px) {
   .MainSection {
     display: grid;
     grid-template-columns: 1fr 1fr;
