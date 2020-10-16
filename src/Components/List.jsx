@@ -15,6 +15,7 @@ export default function List(props) {
                 <ul style={listStyle}>
                     {props.list.map(i => {
                         let emoji = null;
+                        // let emoji = '🍅';
                         if (i.average_rating < 5) {
                             emoji =  '🤮';
                         } if (i.average_rating >= 5 && i.average_rating < 8) {
