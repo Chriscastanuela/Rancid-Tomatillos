@@ -14,20 +14,25 @@ export default function List(props) {
                 <h2 style={headerStyle}>{props.header}</h2>
                 <ul style={listStyle}>
                     {props.list.map(i => {
-                        let emoji = null;
-                        // let emoji = '🍅';
-                        if (i.average_rating < 5) {
-                            emoji =  '🤮';
-                        } if (i.average_rating >= 5 && i.average_rating < 8) {
-                            emoji = '🤨'
-                        } if (i.average_rating >= 8) {
-                            emoji =  '🤩'
+                        let theEmoji = null;
+                        let theEmojis = {
+                            1: '🍅',
+                            2: '🍅🍅',
+                            3: '🍅🍅🍅',
+                            4: '🍅🍅🍅🍅',
+                            5: '🍅🍅🍅🍅🍅',
+                            6: '🍅🍅🍅🍅🍅🍅',
+                            7: '🍅🍅🍅🍅🍅🍅🍅',
+                            8: '🍅🍅🍅🍅🍅🍅🍅🍅',
+                            9: '🍅🍅🍅🍅🍅🍅🍅🍅🍅',
+                            10: '🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅',
                         }
+                        theEmoji = theEmojis[Math.floor(i.average_rating)]
                         return  (
                             <span style={spanStyle}>
-                                <h4 style={{margin: 3}}>{i.title} {emoji}</h4>
-                                <p style={{margin: 3}}>Rating: {Math.floor(i.average_rating)}</p>
+                                <h4 style={{margin: 3}}>{i.title}</h4>
                                 <p style={{margin: 3}}>Release Date: {i.release_date}</p>
+                                <p style={{margin: 3}}>Rating: {theEmoji}</p><br/>
                             </span>
                         )
                     })}
@@ -67,7 +72,7 @@ let headerStyle = {
 
 const spanStyle = {
     margin: 0,
-    textAlign: 'left'
+    textAlign: 'left',
 }
 
 let header2Style = {
