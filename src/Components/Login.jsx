@@ -9,7 +9,7 @@ export default class Login extends Component {
             email: '',
             password: '',
             failedLogin: '',
-            
+
         }
     }
     //name: 'Claire', email: 'claire@turing.io', password: 'qwer1234'
@@ -30,7 +30,7 @@ export default class Login extends Component {
             .then(res => res.json())
             .then(res => {
                 if (res.user) {
-                    this.props.theUpdater('user', res.user);
+                    this.props.theUpdater('user', res.user, console.log(res.user));
                     this.props.theUpdater('isLoggedIn', true);
                 } else {
                     this.setState({failedLogin: 'Username or password incorrect'})

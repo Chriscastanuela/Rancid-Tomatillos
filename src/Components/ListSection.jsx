@@ -35,14 +35,19 @@ export class ListSection extends Component {
                 this.getAList(theMovies.sort((a,b) => {
                     return b.average_rating - a.average_rating;
                 }), 'highestRated')
-                console.log(this.state);
+                // console.log(this.state);
         })
+        if (this.props.user.id) {
+            fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/users/${this.props.user.id}/ratings`)
+                .then(response => response.json())
+                .then(res => console.log('dsfafsadf', res))
+        }
     }
 
     getAList(theList, theKey) {
         let theArray = [];
         theList.forEach(index => {
-            console.log("ListSection -> getAList -> theArray", theArray)
+            // console.log("ListSection -> getAList -> theArray", theArray)
             if (theArray.length < 10) {
                 theArray.push(index);
             }
