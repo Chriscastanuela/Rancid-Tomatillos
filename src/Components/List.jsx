@@ -75,11 +75,6 @@ const spanStyle = {
     textAlign: 'left',
 }
 
-let header2Style = {
-    gridColumn: 2,
-    fontFamily: 'Open Sans, sans-serif',
-}
-
 let listStyle = {
     margin: 0,
     padding: 0,
@@ -88,18 +83,9 @@ let listStyle = {
     marginLeft: '10px'
 }
 
-let titleStyle = {
-    margin: 0,
-    textAlign: 'left'
+let ratingStyle = {
+    margin: 3,
 }
-
-let liStyle2 = {
-    margin: 0,
-    textAlign: 'left',
-    gridColumStart: 2,
-    gridColumEnd: 2
-}
-
 // export default List
 
 // componentDidMount() {

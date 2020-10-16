@@ -67,11 +67,6 @@ export class ListSection extends Component {
     }
 }
 
-let containerStyle = {
-    height: '420px',
-    width: '350px',
-}
-
 export default ListSection
 
 // let listSectionStyle = {
