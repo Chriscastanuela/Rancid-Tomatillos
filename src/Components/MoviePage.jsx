@@ -4,7 +4,6 @@ export class MoviePage extends Component {
   constructor() {
     super()
     this.state = {
-      
     }
   }
   
@@ -12,7 +11,9 @@ export class MoviePage extends Component {
   render() {
     return (
       <div>
-        
+        <div>
+          <img src={this.} alt=""/>
+        </div>
       </div>
     )
   }

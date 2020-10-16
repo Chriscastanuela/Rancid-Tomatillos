@@ -1,10 +1,20 @@
 import React, { Component } from 'react'
 
 export class MovieCard extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      movie: {}
+    }
+  }
+  componentDidMount() {
+    this.setState({movie: this.props.movie})
+  }
   render() {
     return (
       <div style={divStyle}>
-        <img src={this.props.movie.poster_path} alt="Movie Poster" style={imgStyle}/>
+        {console.log("MovieCard -> render -> this.state", this.state)}
+        <img src={this.state.movie.poster_path} alt="Movie Poster" style={imgStyle}/>
         <div style={bodyStyle}>
         </div>
       </div>
@@ -24,6 +34,7 @@ let divStyle = {
 let imgStyle = {
   height: '450px',
   width: '282px',
+  cursor: 'pointer'
 }
 
 const bodyStyle = {
