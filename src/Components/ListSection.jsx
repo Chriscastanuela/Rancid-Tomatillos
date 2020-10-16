@@ -11,6 +11,7 @@ export class ListSection extends Component {
           highestRated: [],
           all: [],
           movieData: [],
+          userRatings: [],
         };
     }
 
@@ -22,7 +23,6 @@ export class ListSection extends Component {
                 let newArr = theMovies.map(i => {
                     return i
                 }).sort((a,b) => {
-                    console.log(a.title)
                     return a.title.localeCompare(b.title)
                 });
                 this.setState({all: newArr});
@@ -56,10 +56,11 @@ export class ListSection extends Component {
         } else {
             return (
                 <section>
-                    <List header={'Most Recent'} list={this.state.recentMovies}/>
-                    <List header={'Highest Rated'} list={this.state.highestRated}/>
-                    <List header={'Lowest Rated'} list={this.state.lowestRated}/>  
-                    <List header={'All'} list={this.state.all}/>   
+                    <List isLoggedIn={this.props.isLoggedIn} header={'Most Recent'} list={this.state.recentMovies}/>
+                    <List isLoggedIn={this.props.isLoggedIn} header={'Highest Rated'} list={this.state.highestRated}/>
+                    <List isLoggedIn={this.props.isLoggedIn} header={'Lowest Rated'} list={this.state.lowestRated}/>
+                    <List isLoggedIn={this.props.isLoggedIn} header={'Your Ratings'} list={this.state.userRatings}/>
+                    <List isLoggedIn={this.props.isLoggedIn} header={'All'} list={this.state.all}/>
                 </section>
             )
         }
@@ -70,6 +71,8 @@ let containerStyle = {
     height: '420px',
     width: '350px',
 }
+
+export default ListSection
 
 // let listSectionStyle = {
 //     paddingLeft: '25px',
@@ -91,8 +94,6 @@ let containerStyle = {
 //     gridColumn: 1,
     // display: 'flex'
 // }
-
-export default ListSection
 
 // Promise.all([
 //     .then(index => {

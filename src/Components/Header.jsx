@@ -3,8 +3,11 @@ import userIcon from '../Assets/user.png'
 import { NavLink, Route } from 'react-router-dom'
 
 export class Header extends Component {
-
-    render() {
+    render(props) {
+        let loginMessage = 'Login';
+        if (this.props.isLoggedIn) {
+            loginMessage = 'Logout';
+        }
         return (
             <section style={sectionStyle}>
                 <NavLink style={headerStyle} to="">
@@ -12,10 +15,15 @@ export class Header extends Component {
                 </NavLink>
                 <div className="UserNameAndIcon" style={userNameAndIconStyle}>
                     <img src={userIcon} alt="User Icon" style={userIconStyle}/>
-                    <NavLink to="login" className="User" style={userStyle}>Login</NavLink>
+                    <NavLink to="login" className="User" style={userStyle} /*onClick={this.logout(this.props)}*/>{loginMessage}</NavLink>
                 </div>
             </section>
         )
+    }
+    logout() {
+        if (this.props.isLoggedIn) {
+            this.props.theUpdater('isLoggedIn', false)
+        }
     }
 }
 

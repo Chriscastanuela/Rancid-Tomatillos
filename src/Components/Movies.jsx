@@ -23,7 +23,6 @@ export default class Movies extends Component {
           <section className='MovieContainer' style={movieSectionStyle}>
             {this.state.allMovies.map((movie) => movie
             ).sort((a,b) => {
-              console.log(a.title)
               return a.title.localeCompare(b.title)
           }).map((movie) => (
             <MovieCard key={movie.id} movie={movie}/>

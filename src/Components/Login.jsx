@@ -1,17 +1,17 @@
 import React from 'react';
 import { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 export default class Login extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             email: '',
-            password: ''
+            password: '',
         }
     }
     //name: 'Claire', email: 'claire@turing.io', password: 'qwer1234'
     sendLogin() {
-        console.log(this.state)
         let thePost = {
             method: 'POST',
             headers: {
@@ -24,24 +24,36 @@ export default class Login extends Component {
                 }
             )
         }
-        console.log(thePost)
         fetch('https://rancid-tomatillos.herokuapp.com/api/v2/login', thePost)
-            .then(res => console.log(res.json()))
+            .then(res => res.json())
+            .then(res => {
+                if (res.user) {
+                    this.props.theUpdater('user', res.user);
+                    this.props.theUpdater('isLoggedIn', true);
+                }
+            })
             .catch(err => console.log(err))
     }
     formUpdate(e) {
         this.setState({[e.target.name]: e.target.value});
     }
     render() {
-        return (
-            <section style={mainSectionStyle}>
-                <div style={divStyle}>
-                    <input type="text" name="email" id="" placeholder='Username' style={inputStyle} value={this.state.email} onChange={(e) => this.formUpdate(e)}/>
-                    <input type="text" name="password" id="" placeholder='Password' style={inputStyle} value={this.state.password} onChange={(e) => this.formUpdate(e)}/>
-                    <button style={buttonStyle} onClick={() => this.sendLogin()}>Login</button>
-                </div>
-            </section>
-        )
+        if (!this.props.isLoggedIn) {
+            return (
+                <section style={mainSectionStyle}>
+                    {console.log(this.props)}
+                    <div style={divStyle}>
+                        <input type="text" name="email" id="" placeholder='Username' style={inputStyle} value={this.state.email} onChange={(e) => this.formUpdate(e)} autocomplete="off"/>
+                        <input type="password" name="password" id="" placeholder='Password' style={inputStyle} value={this.state.password} onChange={(e) => this.formUpdate(e)} autocomplete="off"/>
+                        <button style={buttonStyle} onClick={() => this.sendLogin()}>Login</button>
+                    </div>
+                </section>
+            )
+        } else {
+            return (
+                <Redirect to='/'/>
+            )
+        }
     }
 }
 
@@ -54,7 +66,7 @@ let mainSectionStyle = {
 }
 
 let inputStyle = {
-    fontFamily: 'Open Sans, sans-serif',
+    fontFamily: 'Permanent Marker, cursive',
     marginTop: '2%',
     width: '200px',
     height: '40px',
@@ -64,7 +76,7 @@ let inputStyle = {
 let divStyle = {
     borderStyle: 'solid',
     borderWidth: '1px',
-    borderRadius: '15%',
+    borderRadius: '5%',
     height: '260px',
     width: '320px',
     overflowY: 'scroll',
@@ -82,6 +94,7 @@ let divStyle = {
 let buttonStyle = {
     cursor: 'pointer',
     fontFamily: 'Open Sans, sans-serif',
+    // fontFamily: 'Permanent Marker, cursive',
     width: '150px',
     height: '40px',
     placeSelf: 'center',

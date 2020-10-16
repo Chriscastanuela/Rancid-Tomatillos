@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import ListSection from './ListSection';
 import Movies from './Movies.jsx'
 
-export default function Main() {
+export default function Main(props) {
   return (
     <section style={mainSectionStyle}>
       <h1 style={{fontFamily: 'Permanent Marker, cursive', margin: 0}}>Categories</h1>
-      <ListSection />
+      <ListSection isLoggedIn={props.isLoggedIn} user={props.user}/>
       <Movies />
     </section>
   )
