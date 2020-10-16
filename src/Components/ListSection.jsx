@@ -40,7 +40,7 @@ export class ListSection extends Component {
         if (this.props.user.id) {
             fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/users/${this.props.user.id}/ratings`)
                 .then(response => response.json())
-                .then(res => console.log('dsfafsadf', res))
+                .then(res => this.setState({ userRatings: res[`ratings`] }))
         }
     }
 
