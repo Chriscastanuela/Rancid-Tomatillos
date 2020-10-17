@@ -50,7 +50,7 @@ export class ListSection extends Component {
     getAList(theList, theKey) {
         let theArray = [];
         theList.forEach(index => {
-            console.log("ListSection -> getAList -> theArray", theArray)
+            // console.table("ListSection -> getAList -> theArray", theArray)
             if (theArray.length < 10) {
                 theArray.push(index);
             }
