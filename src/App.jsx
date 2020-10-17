@@ -25,13 +25,22 @@ export class App extends Component {
         <Header isLoggedIn={this.state.isLoggedIn} theUpdater={this.theUpdater}/>
         <Route exact path='/' render={props => (
           <React.Fragment>
-            <Main user={this.state.user} isLoggedIn={this.state.isLoggedIn} />
+            <Main user={this.state.user} isLoggedIn={this.state.isLoggedIn} theUpdater={this.theUpdater}/>
           </React.Fragment>
         )} />
         <Route path='/login' render={props => (
           <Login theUpdater={this.theUpdater} isLoggedIn={this.state.isLoggedIn}/>
         )
         }/>
+        <Route exact path='/movies/:id'
+        render={({match}) => {
+          const { id } = match.params;
+          const movies = 
+          // const creatureToRender = puppies.find(creature => creature.id === parseInt(id));
+          const movieToRender = movies
+        }
+        }
+        />
         <Footer />
       </div>
     </Router>

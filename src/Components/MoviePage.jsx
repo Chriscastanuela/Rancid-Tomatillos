@@ -11,9 +11,7 @@ export class MoviePage extends Component {
   render() {
     return (
       <div>
-        <div>
-          <img src={this.} alt=""/>
-        </div>
+        <h1>{this.state.movie.title}</h1>
       </div>
     )
   }

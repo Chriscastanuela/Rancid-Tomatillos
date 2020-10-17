@@ -36,7 +36,10 @@ export class ListSection extends Component {
                     return b.average_rating - a.average_rating;
                 }), 'highestRated')
                 // console.log(this.state);
-        })
+            })
+            .then(res => (
+                this.props.theUpdater('movies', this.state.all)
+            ))
         if (this.props.user.id) {
             fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/users/${this.props.user.id}/ratings`)
                 .then(response => response.json())

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export class MovieCard extends Component {
   constructor(props) {
@@ -12,12 +13,12 @@ export class MovieCard extends Component {
   }
   render() {
     return (
-      <div style={divStyle}>
+      <Link to={`/movies/${this.state.movie.id}`} style={divStyle}>
         {console.log("MovieCard -> render -> this.state", this.state)}
         <img src={this.state.movie.poster_path} alt="Movie Poster" style={imgStyle}/>
         <div style={bodyStyle}>
         </div>
-      </div>
+      </Link>
     )
   }
 }
