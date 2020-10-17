@@ -37,7 +37,7 @@ export class App extends Component {
         <Route exact path='/movies/:id'
         render={({match}) => {
           const { id } = match.params;
-          return <MoviePage movieId={id}></MoviePage>
+          return <MoviePage userId={this.state.user.id} movieId={id}></MoviePage>
           // const creatureToRender = puppies.find(creature => creature.id === parseInt(id));
         }
         }

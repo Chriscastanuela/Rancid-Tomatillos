@@ -9,7 +9,6 @@ export default class Login extends Component {
             email: '',
             password: '',
             failedLogin: '',
-
         }
     }
     //name: 'Claire', email: 'claire@turing.io', password: 'qwer1234'
