@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
 export class MoviePage extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
     }
   }
@@ -11,7 +11,7 @@ export class MoviePage extends Component {
   render() {
     return (
       <div>
-        <h1>{this.state.movie.title}</h1>
+        <h1>{this.props.movieId}</h1>
       </div>
     )
   }

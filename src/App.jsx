@@ -4,6 +4,7 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Main from './Components/Main';
 import Login from './Components/Login';
+import MoviePage from './Components/MoviePage';
 
 import React, { Component } from 'react'
 
@@ -12,7 +13,8 @@ export class App extends Component {
     super();
     this.state = {
       user: {},
-      isLoggedIn: false
+      isLoggedIn: false,
+      movies: null,
     }
   }
   theUpdater = (state, newState) => {
@@ -35,9 +37,9 @@ export class App extends Component {
         <Route exact path='/movies/:id'
         render={({match}) => {
           const { id } = match.params;
-          const movies = 
+          const movies = this.state.movies;
+          return <MoviePage movieId={id}></MoviePage>
           // const creatureToRender = puppies.find(creature => creature.id === parseInt(id));
-          const movieToRender = movies
         }
         }
         />
