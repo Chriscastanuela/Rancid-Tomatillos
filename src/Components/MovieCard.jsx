@@ -14,7 +14,6 @@ export class MovieCard extends Component {
   render() {
     return (
       <Link to={`/movies/${this.state.movie.id}`} style={divStyle}>
-        {console.log("MovieCard -> render -> this.state", this.state)}
         <img src={this.state.movie.poster_path} alt="Movie Poster" style={imgStyle}/>
         <div style={bodyStyle}>
         </div>

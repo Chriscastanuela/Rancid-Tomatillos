@@ -3,8 +3,8 @@ import List from './List';
 
 
 export class ListSection extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
           recentMovies: [],
           lowestRated: [],
@@ -43,7 +43,9 @@ export class ListSection extends Component {
         if (this.props.user.id) {
             fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/users/${this.props.user.id}/ratings`)
                 .then(response => response.json())
-                .then(res => this.setState({ userRatings: res[`ratings`] }))
+                .then(res => this.setState({userRatings: res.ratings}))
+                // .then(res => console.log(this.props))
+
         }
     }
 
