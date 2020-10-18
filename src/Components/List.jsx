@@ -83,9 +83,6 @@ let listStyle = {
     marginLeft: '10px'
 }
 
-let ratingStyle = {
-    margin: 3,
-}
 // export default List
 
 // componentDidMount() {
