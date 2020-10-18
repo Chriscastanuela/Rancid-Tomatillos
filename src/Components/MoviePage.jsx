@@ -57,10 +57,10 @@ export class MoviePage extends Component {
         10: '🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅',
     }
     theEmoji = theEmojis[Math.floor(this.state.movie['average_rating'])]
-    let theString;
+    let theGenresString;
     if (this.state.movie.genres) {
-      theString = this.state.movie.genres.reduce((acc, i) => {
-        acc += `${ i } `;
+      theGenresString = this.state.movie.genres.reduce((acc, i) => {
+        acc += `${ i },`;
         return acc;
       }, '')
     }
@@ -97,7 +97,7 @@ export class MoviePage extends Component {
               <span className='SmallDetailsSpan'>
                 <p style={{margin: 3}}>Release Date: {this.state.movie.release_date}</p>
                 <p style={{margin: 3}}>Runtime: {this.state.movie.runtime} minutes</p>
-                <p style={{margin: 3}}>Genres: {theString}</p>
+                <p style={{margin: 3}}>Genres: {theGenresString}</p>
                 <p style={{margin: 3}}>Budget: ${this.state.movie.budget}</p>
                 <p style={{margin: 3}}>Revenue: ${this.state.movie.revenue}</p>
               </span>
