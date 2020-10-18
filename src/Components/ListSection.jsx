@@ -60,6 +60,7 @@ export class ListSection extends Component {
     }
     
     render() {
+        console.log("ListSection -> render -> this.state.userRatings", this.state.userRatings)
         if (!this.state.movieData) {
             return <h1 style={{fontFamily: 'Permanent Marker, cursive',}}>Loading...</h1>
         } else {
