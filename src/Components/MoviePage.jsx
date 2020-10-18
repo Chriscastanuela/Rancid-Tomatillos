@@ -60,7 +60,7 @@ export class MoviePage extends Component {
     let theGenresString;
     if (this.state.movie.genres) {
       theGenresString = this.state.movie.genres.reduce((acc, i) => {
-        acc += `${ i },`;
+        acc += `${ i }, `;
         return acc;
       }, '')
     }
