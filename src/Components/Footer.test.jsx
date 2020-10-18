@@ -12,8 +12,8 @@ describe('Footer', () => {
     );
 
 
-    // console.log(expect(screen.getByRole('heading', { name: /rancid/i })))
-    //  expect(screen.getByRole('heading', { name: /rancid/i })).toBeInTheDocument();
+    console.log(expect(screen.getByRole('heading', { name: /rancid/i })))
+     expect(screen.getByRole('heading', { name: /rancid/i })).toBeInTheDocument();
 
     screen.debug()
     let rancidElement = screen.getByText('Rancid')
