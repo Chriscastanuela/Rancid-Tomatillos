@@ -17,7 +17,6 @@
     margin-right: 10px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 40;
     margin-bottom: 20px;
     margin-top: 20px;
     box-shadow: 10px 15px 35px #888888;
@@ -141,4 +140,222 @@
 .SmallDetailsSpan {
     margin: 0;
     text-align: left;
+}
+
+@media screen and (min-width: 840px)  {
+    .MoviePage {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        align-content: center;
+        justify-content: center;
+    }
+    
+    .BackdropContainer {
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 5%;
+        height: 520px;
+        width: 840px;
+        overflow-y: scroll;
+        margin-left: 10px;
+        margin-right: 10px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 40;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        box-shadow: 10px 15px 35px #888888;
+        padding-bottom: 20px;
+        background-color: #F3EED9;
+        place-self: center;
+        place-content: center;
+        grid-row: 1;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .BackdropDiv {
+        height: 390px;
+        width: 630px;
+        place-self: center;
+        box-shadow: 10px 15px 35px #888888;
+    }
+
+    .MovieBackdrop {
+        height: 390px;
+        width: 630px;
+        place-self: center;
+    }
+
+    .MoviePosterContainer {
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 5%;
+        height: 520px;
+        width: 420px;
+        overflow-y: scroll;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 40;
+        /* margin-top: 20px; */
+        margin: 0;
+        box-shadow: 10px 15px 35px #888888;
+        padding-top: 20px;
+        background-color: #F3EED9;
+        place-self: center;
+        grid-column: 1;
+    }
+
+    .BigDetails {
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 5%;
+        height: 260px;
+        width: 420px;
+        overflow-y: scroll;
+        margin-left: 10px;
+        margin-right: 10px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 40;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        box-shadow: 10px 15px 35px #888888;
+        padding-bottom: 20px;
+        background-color: #F3EED9;
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .SmallDetails {
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 10%;
+        height: 130px;
+        width: 420px;
+        overflow-y: scroll;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 350px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 40;
+        margin-bottom: 20px;
+        /* margin-top: 20px; */
+        box-shadow: 10px 15px 35px #888888;
+        padding-bottom: 20px;
+        background-color: #F3EED9;
+        grid-column: 2;
+        grid-row: 2;
+    }
+}
+
+@media screen and (min-width: 1160px) {
+    .MoviePage {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+        align-content: center;
+        justify-content: center;
+    }
+    
+    .BackdropContainer {
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 5%;
+        height: 520px;
+        width: 840px;
+        overflow-y: scroll;
+        margin-left: 10px;
+        margin-right: 10px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 40;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        box-shadow: 10px 15px 35px #888888;
+        padding-bottom: 20px;
+        background-color: #F3EED9;
+        place-self: center;
+        place-content: center;
+        grid-row: 1;
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    .BackdropDiv {
+        height: 390px;
+        width: 630px;
+        place-self: center;
+        box-shadow: 10px 15px 35px #888888;
+    }
+
+    .MovieBackdrop {
+        height: 390px;
+        width: 630px;
+        place-self: center;
+    }
+
+    .MoviePosterContainer {
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 5%;
+        height: 520px;
+        width: 420px;
+        overflow-y: scroll;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 40;
+        margin: 0;
+        box-shadow: 10px 15px 35px #888888;
+        padding-top: 20px;
+        background-color: #F3EED9;
+        place-self: center;
+        grid-column: 1;
+    }
+
+    .BigDetails {
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 5%;
+        height: 260px;
+        width: 420px;
+        overflow-y: scroll;
+        margin-left: 10px;
+        margin-right: 10px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 40;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        box-shadow: 10px 15px 35px #888888;
+        padding-bottom: 20px;
+        background-color: #F3EED9;
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .SmallDetails {
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 10%;
+        height: 130px;
+        width: 420px;
+        overflow-y: scroll;
+        margin-left: 10px;
+        margin-right: 10px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 40;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        box-shadow: 10px 15px 35px #888888;
+        padding-bottom: 20px;
+        background-color: #F3EED9;
+        grid-column: 3;
+        grid-row: 2;
+    }
 }
