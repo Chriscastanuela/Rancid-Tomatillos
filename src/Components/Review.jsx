@@ -5,32 +5,40 @@ export default function Review(props) {
   if (props) {
     return (
       <div >
-      <ul style={listStyle}>
+        <ul style={listStyle}>
           {props.reviews.map(i => {
-              let theEmoji = null;
-              let theEmojis = {
-                  1: '🍅',
-                  2: '🍅🍅',
-                  3: '🍅🍅🍅',
-                  4: '🍅🍅🍅🍅',
-                  5: '🍅🍅🍅🍅🍅',
-                  6: '🍅🍅🍅🍅🍅🍅',
-                  7: '🍅🍅🍅🍅🍅🍅🍅',
-                  8: '🍅🍅🍅🍅🍅🍅🍅🍅',
-                  9: '🍅🍅🍅🍅🍅🍅🍅🍅🍅',
-                  10: '🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅',
-              }
-              theEmoji = theEmojis[Math.floor(i.rating)]
-              return  (
-                  <span style={spanStyle}>
-                      <h4 style={{margin: 3}}>T</h4>
-                      <p style={{margin: 3}}>R</p>
-              <p style={{margin: 3}}>Rating: {theEmoji}</p><br/>
-                  </span>
-              )
-              })}
-      </ul>
-  </div>
+            let theEmoji = null;
+            let theSecondEmoji = null;
+            let theEmojis = {
+              1: '🍅',
+              2: '🍅🍅',
+              3: '🍅🍅🍅',
+              4: '🍅🍅🍅🍅',
+              5: '🍅🍅🍅🍅🍅',
+              6: '🍅🍅🍅🍅🍅🍅',
+              7: '🍅🍅🍅🍅🍅🍅🍅',
+              8: '🍅🍅🍅🍅🍅🍅🍅🍅',
+              9: '🍅🍅🍅🍅🍅🍅🍅🍅🍅',
+              10: '🍅🍅🍅🍅🍅🍅🍅🍅🍅🍅',
+            }
+            theEmoji = theEmojis[Math.floor(i.rating)]
+            let theMovie = props.all.find(index => {
+              return i.movie_id == index.id
+            })
+            theSecondEmoji = theEmojis[Math.floor(theMovie.average_rating)]
+            console.log(theMovie);
+            return  (
+              <span style={spanStyle}>
+                <h4 style={{margin: 3}}>Title: {theMovie.title}</h4>
+                <p style={{margin: 3}}>Release Date: {theMovie.release_date}</p>
+                <p style={{margin: 3}}>Average Rating: {theSecondEmoji}</p>
+                <p style={{margin: 3}}>Your Rating: {theEmoji}</p><br/>
+              </span>
+            )
+          })
+          }
+        </ul>
+      </div>
     )
   } else {
     return (

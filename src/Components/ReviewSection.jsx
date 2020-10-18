@@ -12,10 +12,6 @@ export class ReviewSection extends Component {
     this.setState({[state]: newState});
   }
 
-  componentDidMount() {
-    // this.setState({ reviews: this.props.list })
-  }
-
   render() {
     console.log(this.props)
     if (!this.props.isLoggedIn) {
@@ -29,10 +25,7 @@ export class ReviewSection extends Component {
       return(
         <div style={divStyle}>
         <h2 style={headerStyle}>{this.props.header}</h2>
-        {/* {this.props.list.map(i => {
-          return <Review review={i} theUpdater={this.theUpdater}/>
-        })}  */}
-        <Review reviews={this.props.list} theUpdater={this.theUpdater}/>
+        <Review reviews={this.props.list} theUpdater={this.theUpdater} all={this.props.all}/>
       </div>
       )
     }
