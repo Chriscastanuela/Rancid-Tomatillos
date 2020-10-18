@@ -7,7 +7,7 @@ export default function Main(props) {
     <section className='MainSection' >
       <h1 className='CategoriesH'>Categories</h1>
       <ListSection user={props.user} isLoggedIn={props.isLoggedIn} theUpdater={props.theUpdater}/>
-      <h1 className='PostersH'>Movie Pages</h1>
+      <h1 className='PostersH'>Movie Details</h1>
       <Movies />
     </section>
   )
