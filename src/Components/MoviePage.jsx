@@ -96,10 +96,10 @@ export class MoviePage extends Component {
           <ul className='SmallDetailsList'>
               <span className='SmallDetailsSpan'>
                 <p style={{margin: 3}}>Release Date: {this.state.movie.release_date}</p>
-                <p style={{margin: 3}}>Runtime: {this.state.movie.runtime}</p>
+                <p style={{margin: 3}}>Runtime: {this.state.movie.runtime} minutes</p>
                 <p style={{margin: 3}}>Genres: {theString}</p>
-                <p style={{margin: 3}}>Budget: {this.state.movie.budget}</p>
-                <p style={{margin: 3}}>Revenue: {this.state.movie.revenue}</p>
+                <p style={{margin: 3}}>Budget: ${this.state.movie.budget}</p>
+                <p style={{margin: 3}}>Revenue: ${this.state.movie.revenue}</p>
               </span>
           </ul>
         </div>
