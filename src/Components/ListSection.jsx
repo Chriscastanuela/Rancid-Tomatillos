@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import List from './List';
+import ReviewSection from './ReviewSection';
 
 
 export class ListSection extends Component {
@@ -64,7 +65,7 @@ export class ListSection extends Component {
         } else {
             return (
                 <section className='ListSection'>
-                    <List isLoggedIn={this.props.isLoggedIn} header={'Your Ratings'} list={this.state.userRatings}/>
+                    <ReviewSection isLoggedIn={this.props.isLoggedIn} header={'Your Ratings'} list={this.state.userRatings}/>
                     <List isLoggedIn={this.props.isLoggedIn} header={'New Releases'} list={this.state.recentMovies}/>
                     <List isLoggedIn={this.props.isLoggedIn} header={'Fan Favorites'} list={this.state.highestRated}/>
                     <List isLoggedIn={this.props.isLoggedIn} header={'Rancid Tomatillos'} list={this.state.lowestRated}/>

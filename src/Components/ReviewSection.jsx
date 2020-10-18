@@ -9,11 +9,19 @@ export class ReviewSection extends Component {
     }
   }
 
+  theUpdater = (state, newState) => {
+    this.setState({[state]: newState});
+  }
+
+  componentDidMount() {
+    this.setState({ reviews: this.props.list })
+  }
+
   render() {
     return (
       <div>
         {this.state.reviews.map(i => {
-          return <Review review={i}/>
+          return <Review review={i} reviews={this.state.reviews} theUpdater={this.theUpdater()}/>
         })}
       </div>
     )
