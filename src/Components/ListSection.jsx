@@ -3,8 +3,8 @@ import List from './List';
 
 
 export class ListSection extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
           recentMovies: [],
           lowestRated: [],
@@ -35,14 +35,22 @@ export class ListSection extends Component {
                 this.getAList(theMovies.sort((a,b) => {
                     return b.average_rating - a.average_rating;
                 }), 'highestRated')
-                console.log(this.state);
-        })
+                // console.log(this.state);
+            })
+            .then(res => (
+                this.props.theUpdater('movies', this.state.all)
+            ))
+        if (this.props.user.id) {
+            fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/users/${this.props.user.id}/ratings`)
+                .then(response => response.json())
+                .then(res => this.setState({userRatings: res.ratings}))
+        }
     }
 
     getAList(theList, theKey) {
         let theArray = [];
         theList.forEach(index => {
-            console.log("ListSection -> getAList -> theArray", theArray)
+            // console.table("ListSection -> getAList -> theArray", theArray)
             if (theArray.length < 10) {
                 theArray.push(index);
             }

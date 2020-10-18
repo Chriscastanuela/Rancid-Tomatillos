@@ -4,6 +4,7 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Main from './Components/Main';
 import Login from './Components/Login';
+import MoviePage from './Components/MoviePage';
 
 import React, { Component } from 'react'
 
@@ -12,7 +13,8 @@ export class App extends Component {
     super();
     this.state = {
       user: {},
-      isLoggedIn: false
+      isLoggedIn: false,
+      movies: null,
     }
   }
   theUpdater = (state, newState) => {
@@ -25,13 +27,21 @@ export class App extends Component {
         <Header isLoggedIn={this.state.isLoggedIn} theUpdater={this.theUpdater}/>
         <Route exact path='/' render={props => (
           <React.Fragment>
-            <Main user={this.state.user} isLoggedIn={this.state.isLoggedIn} />
+            <Main user={this.state.user} isLoggedIn={this.state.isLoggedIn} theUpdater={this.theUpdater}/>
           </React.Fragment>
         )} />
         <Route path='/login' render={props => (
           <Login theUpdater={this.theUpdater} isLoggedIn={this.state.isLoggedIn}/>
         )
         }/>
+        <Route exact path='/movies/:id'
+        render={({match}) => {
+          const { id } = match.params;
+          return <MoviePage userId={this.state.user.id} movieId={id}></MoviePage>
+          // const creatureToRender = puppies.find(creature => creature.id === parseInt(id));
+        }
+        }
+        />
         <Footer />
       </div>
     </Router>

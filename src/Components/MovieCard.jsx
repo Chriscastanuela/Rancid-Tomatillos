@@ -1,13 +1,23 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export class MovieCard extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      movie: {}
+    }
+  }
+  componentDidMount() {
+    this.setState({movie: this.props.movie})
+  }
   render() {
     return (
-      <div style={divStyle}>
-        <img src={this.props.movie.poster_path} alt="Movie Poster" style={imgStyle}/>
+      <Link to={`/movies/${this.state.movie.id}`} style={divStyle}>
+        <img src={this.state.movie.poster_path} alt="Movie Poster" style={imgStyle}/>
         <div style={bodyStyle}>
         </div>
-      </div>
+      </Link>
     )
   }
 }
@@ -24,6 +34,7 @@ let divStyle = {
 let imgStyle = {
   height: '450px',
   width: '282px',
+  cursor: 'pointer'
 }
 
 const bodyStyle = {
