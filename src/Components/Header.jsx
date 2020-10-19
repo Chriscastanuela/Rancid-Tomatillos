@@ -15,7 +15,7 @@ export class Header extends Component {
                 </NavLink>
                 <div className="UserNameAndIcon" style={userNameAndIconStyle}>
                     <img src={userIcon} alt="User Icon" style={userIconStyle}/>
-                    <NavLink to="login" className="User" style={userStyle} /*onClick={this.logout(this.props)}*/>{loginMessage}</NavLink>
+                    <NavLink to="/login" className="User" style={userStyle} /*onClick={this.logout(this.props)}*/>{loginMessage}</NavLink>
                 </div>
             </section>
         )

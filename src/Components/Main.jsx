@@ -12,25 +12,3 @@ export default function Main(props) {
     </section>
   )
 }
-
-
-// getRecentMovies() {
-  //   let lastTen = [];
-  //   this.state.movieData.movies.sort((a,b) => {
-  //     return b.release_date - a.release_date;
-  //   }).forEach(index => {
-  //     if (lastTen && lastTen.length < 10) {
-  //       lastTen.push(index);
-  //     }
-  //   })
-  //   this.setState({latestMovies: lastTen})
-  // }
-  // getLowestRated() {
-  //   let bottomTen = [];
-  //   .forEach(index => {
-  //   if (bottomTen.length < 10) {
-  //     bottomTen.push(index);
-  //   }
-  //   });
-  //   this.setState({: bottomTen});
-  // }

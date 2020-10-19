@@ -19,16 +19,6 @@ export default class Review extends Component {
   }
 
   render() {
-    // if (this.props.user) {
-    //   Promise.all([
-    //     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/users/${this.props.user.id}/ratings`)
-    //       .then(response => response.json())
-    //       .then(res => this.setState({ratings: res.ratings}))
-    //   ])
-      // .then(i => {
-        // console.log(i)
-      // })
-    // }
     if (this.state.ratings) {
       return (
         <div >
@@ -63,8 +53,6 @@ export default class Review extends Component {
                   })
                 }
 
-                console.log(theMovie)
-
                 theSecondEmoji = theEmojis[Math.floor(theMovie.average_rating)]
 
                 return  (
@@ -82,7 +70,6 @@ export default class Review extends Component {
         </div>
       )
     } else {
-      console.log(this.props)
       return (
         <p>You do not have any ratings at this time</p>
       )
