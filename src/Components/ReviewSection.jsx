@@ -12,26 +12,19 @@ export class ReviewSection extends Component {
     this.setState({[state]: newState});
   }
 
-  componentDidMount() {
-    // this.setState({ reviews: this.props.list })
-  }
-
   render() {
-    console.log(this.props)
-    if (!this.props.isLoggedIn && !this.props.list) {
+    if (!this.props.isLoggedIn) {
       return(
         <div style={divStyle}>
         <h2 style={headerStyle}>{this.props.header}</h2>
-        <p>You suk</p>
+        <p>Log in if you would like to see your ratings.</p>
       </div>
       )
     } else {
       return(
         <div style={divStyle}>
         <h2 style={headerStyle}>{this.props.header}</h2>
-        {this.props.list.map(i => {
-          return <Review review={i} theUpdater={this.theUpdater}/>
-        })} 
+        <Review reviews={this.props.reviews} theUpdater={this.theUpdater} all={this.props.all} userLists={this.props.userLists} userRatings={this.props.userRatings} user={this.props.user}/>
       </div>
       )
     }
@@ -64,23 +57,6 @@ let headerStyle = {
   fontFamily: 'Open Sans, sans-serif',
   gridColumn: 1,
   gridRow: 1
-}
-
-const spanStyle = {
-  margin: 0,
-  textAlign: 'left',
-}
-
-let listStyle = {
-  margin: 0,
-  padding: 0,
-  gridColumn: 1,
-  gridRow: 2,
-  marginLeft: '10px'
-}
-
-let ratingStyle = {
-  margin: 3,
 }
 
 export default ReviewSection
