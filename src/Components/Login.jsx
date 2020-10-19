@@ -29,7 +29,7 @@ export default class Login extends Component {
             .then(res => res.json())
             .then(res => {
                 if (res.user) {
-                    this.props.theUpdater('user', res.user, console.log(res.user));
+                    this.props.theUpdater('user', res.user);
                     this.props.theUpdater('isLoggedIn', true);
                 } else {
                     this.setState({failedLogin: 'Username or password incorrect'})
@@ -44,7 +44,6 @@ export default class Login extends Component {
         if (!this.props.isLoggedIn) {
             return (
                 <section style={mainSectionStyle}>
-                    {console.log(this.props)}
                     <div style={divStyle}>
                         <input type="text" name="email" id="" placeholder='Username' style={inputStyle} value={this.state.email} onChange={(e) => this.formUpdate(e)} autocomplete="off"/>
                         <input type="password" name="password" id="" placeholder='Password' style={inputStyle} value={this.state.password} onChange={(e) => this.formUpdate(e)} autocomplete="off"/>
@@ -98,7 +97,6 @@ let divStyle = {
 let buttonStyle = {
     cursor: 'pointer',
     fontFamily: 'Open Sans, sans-serif',
-    // fontFamily: 'Permanent Marker, cursive',
     width: '150px',
     height: '40px',
     placeSelf: 'center',

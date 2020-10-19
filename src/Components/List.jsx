@@ -92,7 +92,6 @@ let listStyle = {
 //     })
 //     this.setState({list: theArray});
 //     this.setState({header: this.props.header});
-//     console.log(this.state);
 // }
 
 // componentDidMount() {
@@ -102,13 +101,10 @@ let listStyle = {
         // })
         // this.setState({list: theArray});
     //     this.setState({header: this.props.header});
-    //     console.log(this.state);
     // }
 
 // componentDidMount() {
-    //     {console.log(this.props)};
     //     this.setState({ list: this.props.list });
-    //     {console.log('asfdafsdfsafdfsda', this.state.list)}
     //     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
     //     .then(response => response.json())
     //     .then(res => {
@@ -119,10 +115,8 @@ let listStyle = {
     //         }).forEach(index => {
     //             if (theTen.length < 10) {
     //                 theTen.push(index);
-    //                 console.log(theTen);
     //             }
     //         this.setState({ list: theTen })
-    //         console.log(this.state);
     //         })
     //     })
     // }

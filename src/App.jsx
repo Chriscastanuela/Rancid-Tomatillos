@@ -15,10 +15,20 @@ export class App extends Component {
       user: {},
       isLoggedIn: false,
       movies: null,
+      userLists: {},
+      userRatings: []
     }
   }
   theUpdater = (state, newState) => {
     this.setState({[state]: newState});
+  }
+  updateUserLists = (newState) => {
+    this.setState({userLists: newState});
+    console.log(this.state.userLists);
+  }
+  updateUserRatings = (newState) => {
+    this.setState({userRatings: newState});
+    console.log(this.state.userLists);
   }
   render() {
     return (
@@ -27,7 +37,7 @@ export class App extends Component {
         <Header isLoggedIn={this.state.isLoggedIn} theUpdater={this.theUpdater}/>
         <Route exact path='/' render={props => (
           <React.Fragment>
-            <Main user={this.state.user} isLoggedIn={this.state.isLoggedIn} theUpdater={this.theUpdater}/>
+            <Main user={this.state.user} isLoggedIn={this.state.isLoggedIn} theUpdater={this.theUpdater} updateUserLists={this.updateUserLists} userLists={this.state.userLists} userRatings={this.state.userRatings}/>
           </React.Fragment>
         )} />
         <Route path='/login' render={props => (
@@ -37,8 +47,7 @@ export class App extends Component {
         <Route exact path='/movies/:id'
         render={({match}) => {
           const { id } = match.params;
-          return <MoviePage userId={this.state.user.id} movieId={id}></MoviePage>
-          // const creatureToRender = puppies.find(creature => creature.id === parseInt(id));
+          return <MoviePage userId={this.state.user.id} movieId={id} updateUserRatings={this.updateUserRatings}></MoviePage>
         }
         }
         />

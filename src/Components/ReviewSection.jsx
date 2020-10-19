@@ -13,7 +13,6 @@ export class ReviewSection extends Component {
   }
 
   render() {
-    console.log(this.props)
     if (!this.props.isLoggedIn) {
       return(
         <div style={divStyle}>
@@ -25,7 +24,7 @@ export class ReviewSection extends Component {
       return(
         <div style={divStyle}>
         <h2 style={headerStyle}>{this.props.header}</h2>
-        <Review reviews={this.props.list} theUpdater={this.theUpdater} all={this.props.all}/>
+        <Review reviews={this.props.reviews} theUpdater={this.theUpdater} all={this.props.all} userLists={this.props.userLists} userRatings={this.props.userRatings} user={this.props.user}/>
       </div>
       )
     }
