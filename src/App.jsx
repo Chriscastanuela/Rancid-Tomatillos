@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
 import './css/App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
@@ -45,12 +45,14 @@ export class App extends Component {
         )
         }/>
         <Route exact path='/movies/:id'
-        render={({match}) => {
-          const { id } = match.params;
-          return <MoviePage userId={this.state.user.id} movieId={id} updateUserRatings={this.updateUserRatings}></MoviePage>
-        }
-        }
+          render={({match}) => {
+            const { id } = match.params;
+            return <MoviePage userId={this.state.user.id} movieId={id} updateUserRatings={this.updateUserRatings} user={this.state.user} isLoggedIn={this.state.isLoggedIn} theUpdater={this.theUpdater} updateUserLists={this.updateUserLists} userLists={this.state.userLists} userRatings={this.state.userRatings}></MoviePage>
+          }}
         />
+        <Switch>
+          <Redirect to='/'/>
+        </Switch>
         <Footer />
       </div>
     </Router>

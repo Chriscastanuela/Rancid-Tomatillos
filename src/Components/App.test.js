@@ -1,9 +1,9 @@
 import React from 'react';
-import Footer from './Footer';
+import Footer from './App';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-describe('Footer', () => {
+describe('App', () => {
    it('displays the h1 in the footer', () => {
     render(<Footer />);
   
