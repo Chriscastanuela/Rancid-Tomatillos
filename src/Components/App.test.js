@@ -4,10 +4,10 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 describe('App', () => {
-   it('displays the h1 in the footer', () => {
-    render(<Footer />);
+   it('displays the homepage by default', () => {
+    render(<App />);
   
-    let rancidElement = screen.getByText("Rancid");
+    let header = screen.getByText("Rancid");
     expect(rancidElement).toBeInTheDocument();
 
     it('Should work', () => {

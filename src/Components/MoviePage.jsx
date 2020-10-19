@@ -65,7 +65,7 @@ export class MoviePage extends Component {
       }, '')
     }
 
-    
+
     return (
       <div className="MoviePage">
         <div className='BackdropContainer'>
