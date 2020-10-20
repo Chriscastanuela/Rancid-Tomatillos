@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from './Header';
+import List from './List';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-describe('Header', () => {
+describe('List', () => {
    
     it('Should work', () => {
       expect(true).toBeTruthy()
