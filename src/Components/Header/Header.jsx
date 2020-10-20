@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import userIcon from '../Assets/user.png'
+import userIcon from '../../Assets/user.png'
 import { NavLink, Route } from 'react-router-dom'
 
 export class Header extends Component {
@@ -20,11 +20,11 @@ export class Header extends Component {
             </section>
         )
     }
-    logout() {
-        if (this.props.isLoggedIn) {
-            this.props.theUpdater('isLoggedIn', false)
-        }
-    }
+    // logout() {
+    //     if (this.props.isLoggedIn) {
+    //         document.location.reload();
+    //     }
+    // }
 }
 
 const sectionStyle = {

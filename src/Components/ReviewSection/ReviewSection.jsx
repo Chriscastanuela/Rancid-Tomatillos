@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Review from './Review.jsx'
+import Review from '../Review/Review.jsx'
 
 export class ReviewSection extends Component {
   constructor(props) {

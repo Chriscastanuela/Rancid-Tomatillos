@@ -64,6 +64,8 @@ export class MoviePage extends Component {
         return acc;
       }, '')
     }
+
+
     return (
       <div className="MoviePage">
         <div className='BackdropContainer'>
@@ -80,7 +82,6 @@ export class MoviePage extends Component {
           <h2 className='MovieName'>{this.state.movie.title}</h2>
           <ul className='BigDetailsList'>
             <span className='BigDetailsSpan'>
-              {/* <h2 className='MovieName'>{this.state.movie.title}</h2> */}
               <p style={{margin: 3}}>Tagline: {this.state.movie.tagline}</p>
               <p style={{margin: 3}}>Rating: {theEmoji}</p>
               <p style={{margin: 3}}>Overview: {this.state.movie.overview}</p><br/>
@@ -109,16 +110,3 @@ export class MoviePage extends Component {
 }
 
 export default MoviePage
-
-// let theData = {
-//   movie:
-//     {
-//       id: 528085,
-      // title: 2067,
-      // poster_path: 'https://image.tmdb.org/t/p/original//7D430eqZj8y3oVkLFfsWXGRcpEG.jpg',
-      // backdrop_path: 'https://image.tmdb.org/t/p/original//5UkzNSOK561c2QRy2Zr4AkADzLT.jpg',
-      // overview: 'A lowly utility worker is called to the future by a mysterious radio signal, he must leave his dying wife to embark on a journey that will force him to face his deepest fears in an attempt to change the fabric of reality and save humankind from its greatest environmental crisis yet.',
-      
-      // average_rating: 7
-//     }
-// }
