@@ -9,8 +9,7 @@ describe('Footer', () => {
   
     let rancidElement = screen.getByText("Rancid");
     expect(rancidElement).toBeInTheDocument();
+    console.log(rancidElement)
+    });
 
-    it('Should work', () => {
-      expect(true).toBeTruthy()
-    })
 });
