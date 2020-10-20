@@ -12,4 +12,11 @@ describe('Header', () => {
   let headerText = screen.getByText("Rancid Tomatillos");
   expect(headerText).toBeInTheDocument();
   });
+
+  it('displays the login message', () => {
+    render(<Router><Header /></Router>);
+  
+  let login = screen.getByText("Login");
+  expect(login).toBeInTheDocument();
+  });
 })

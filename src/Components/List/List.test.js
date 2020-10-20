@@ -5,7 +5,9 @@ import '@testing-library/jest-dom';
 
 describe('List', () => {
    
-    it('Should work', () => {
-      expect(true).toBeTruthy()
+    it('Should render a p tag with the text "Rating: "', () => {
+      render(<List/>);
+      let rating = screen.getByText('Rating: ')
+      expect(rating).toBeInTheDocument();
     })
 })
