@@ -68,7 +68,7 @@ export class ListSection extends Component {
                     <ReviewSection user={this.props.user} all={this.state.all} isLoggedIn={this.props.isLoggedIn} header={'Your Ratings'} reviews={this.state.userRatings} updateUserLists={this.props.updateUserLists} userLists={this.props.userLists} userRatings={this.props.userRatings}/>
                     <List isLoggedIn={this.props.isLoggedIn} header={'New Releases'} list={this.state.recentMovies}/>
                     <List isLoggedIn={this.props.isLoggedIn} header={'Fan Favorites'} list={this.state.highestRated}/>
-                    <List isLoggedIn={this.props.isLoggedIn} header={'Rancid Tomatillos'} list={this.state.lowestRated}/>
+                    <List isLoggedIn={this.props.isLoggedIn} header={'Lowest Rated'} list={this.state.lowestRated}/>
                     <List isLoggedIn={this.props.isLoggedIn} header={'All'} list={this.state.all}/>
                 </section>
             )

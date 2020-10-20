@@ -78,8 +78,7 @@ export default class Review extends Component {
                     <p style={{margin: 3}}>Release Date: {theMovie.release_date}</p>
                     <p style={{margin: 3}}>Average Rating: {theSecondEmoji}</p>
                     <p style={{margin: 3}}>Your Rating: {theEmoji}</p>
-                    {/* <input  type="submit" /> */}
-                    <button style={{float: 'left', margin: 3, cursor: 'pointer'}} onClick={() => this.deleteRating(i.movie_id)}>Delete Rating</button><br/>
+                    <button style={{float: 'left', margin: 3, cursor: 'pointer'}} onClick={() => this.deleteRating(i.movie_id)}>Delete Rating</button><br/><br/>
                   </span>
                 )
 
