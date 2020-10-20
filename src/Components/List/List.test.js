@@ -33,14 +33,44 @@ let recentMovies = [
 
 describe('List', () => {
 
-    it('Should render a p tag with the text "Rating: " ', () => {
+    it('Should render a the movie title', () => {
       render(<List 
                 isLoggedIn={true}
                 header={'New Releases'} 
                 list={recentMovies}
               />);
 
-      let rating = screen.getByText('After We Collided')
-      expect(rating).toBeInTheDocument();
+      let afterWeCollided = screen.getByText('After We Collided')
+      expect(afterWeCollided).toBeInTheDocument();
+      let twentySixtySeven = screen.getByText('2067')
+      expect(twentySixtySeven).toBeInTheDocument();
+      let antebellum = screen.getByText('Antebellum')
+      expect(antebellum).toBeInTheDocument();
+    })
+
+    it('Should render average ratings', () => {
+      render(<List 
+                isLoggedIn={true}
+                header={'New Releases'} 
+                list={recentMovies}
+              />);
+
+      let five = screen.getByText('Rating: 🍅🍅🍅🍅🍅')
+      expect(five).toBeInTheDocument();
+      let six = screen.getByText('Rating: 🍅🍅🍅🍅🍅🍅')
+      expect(six).toBeInTheDocument();
+      let four = screen.getByText('Rating: 🍅🍅🍅🍅')
+      expect(four).toBeInTheDocument();
+    })
+
+    it('Should render the `header` prop', () => {
+      render(<List 
+                isLoggedIn={true}
+                header={'New Releases'} 
+                list={recentMovies}
+              />);
+
+      let newReleases = screen.getByText('New Releases')
+      expect(newReleases).toBeInTheDocument();
     })
 })
