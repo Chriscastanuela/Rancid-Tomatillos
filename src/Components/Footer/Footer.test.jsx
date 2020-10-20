@@ -9,7 +9,6 @@ describe('Footer', () => {
   
     let rancidElement = screen.getByText("Rancid");
     expect(rancidElement).toBeInTheDocument();
-    console.log(rancidElement)
     });
 
 });
