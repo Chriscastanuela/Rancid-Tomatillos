@@ -8,9 +8,7 @@ describe('ReviewSection', () => {
     it('Should render to the dom', () => {
       render(<ReviewSection />)
 
-      let reviewHeader = screen.getByText(/log in if you would like to see your ratings./i)
-      expect(reviewHeader).toBeInTheDocument()
+      let reviewParagraph = screen.getByText(/log in if you would like to see your ratings./i)
+      expect(reviewParagraph).toBeInTheDocument()
     })
-
-
 })

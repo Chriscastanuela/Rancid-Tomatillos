@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 export default function List(props) {
+    // console.log(props);
     if (!props.isLoggedIn && props.header == 'Your Ratings') {
         return (
             <div style={divStyle}>
