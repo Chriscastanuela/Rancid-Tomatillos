@@ -18,6 +18,16 @@ export default class Review extends Component {
     }
   }
 
+  updateRatings (movieId) {
+    
+    let newRatings = this.state.ratings.filter(i => {
+      console.log("Review -> updateRatings -> i.id", movieId)
+      console.log("Review -> updateRatings -> i.id", i.id)
+      return i.movie_id != movieId
+    })
+    this.setState({ ratings: newRatings })
+  }
+
   deleteRating(id) {
     let theMovieRating = this.state.ratings.find(index => {
       return id == index.movie_id
@@ -30,7 +40,8 @@ export default class Review extends Component {
       },
     }
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/users/${this.props.user.id}/ratings/${theMovieRating.id}`, thePost)
-      .then(res => console.log(res))
+      .then(res => console.log(res));
+    this.updateRatings(id)
   }
 
   render() {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import List from './List';
-import ReviewSection from './ReviewSection';
+import List from '../List/List';
+import ReviewSection from '../ReviewSection/ReviewSection';
 
 
 export class ListSection extends Component {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import ListSection from './ListSection';
-import Movies from './Movies.jsx'
+import ListSection from '../ListSection/ListSection';
+import Movies from '../Movies/Movies.jsx'
 
 export default function Main(props) {
   return (

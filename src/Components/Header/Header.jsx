@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import userIcon from '../Assets/user.png'
+import userIcon from '../../Assets/user.png'
 import { NavLink, Route } from 'react-router-dom'
 
 export class Header extends Component {

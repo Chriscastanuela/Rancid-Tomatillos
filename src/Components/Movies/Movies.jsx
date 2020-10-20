@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import MovieCard from './MovieCard.jsx'
+import MovieCard from '../MovieCard/MovieCard.jsx'
 
 export default class Movies extends Component {
 

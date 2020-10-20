@@ -1,5 +1,5 @@
-@import 'moviePage.css';
-@import 'MainSection.css';
+@import '../Components/MoviePage/moviePage.css';
+@import '../Components/Main/Main.css';
 
 body {
   margin: 0;
