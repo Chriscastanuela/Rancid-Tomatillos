@@ -1,5 +1,5 @@
 <a name="mainContents"></a>
-# Tic-Tac-Toe
+# Rancid Tomatillos
 > A js project by Caleb Cyphers Chris Castenuela
 
 # Contents 
@@ -57,6 +57,6 @@
 
 [Back to Main](#mainContents)
 
-> Caleb Cyphers [here](https://github.com/Chriscastanuela?tab=repositories)
+> Caleb Cyphers [here](https://github.com/CalebCyphers?tab=repositories)
 
 > Christopher Castanuela [here](https://github.com/Chriscastanuela?tab=repositories)
