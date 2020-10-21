@@ -6,6 +6,9 @@ import '@testing-library/jest-dom';
 describe('Login', () => {
    
     it('Should work', () => {
-      expect(true).toBeTruthy()
+      render(<Login></Login>)
+      expect(screen.getByText('Login').toBeInTheDocument);
+      expect(screen.getByPlaceholderText('Username').toBeInTheDocument);
+      expect(screen.getByPlaceholderText('Password').toBeInTheDocument);
     })
 })
