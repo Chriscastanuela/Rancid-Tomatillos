@@ -20,11 +20,6 @@ export class Header extends Component {
             </section>
         )
     }
-    // logout() {
-    //     if (this.props.isLoggedIn) {
-    //         document.location.reload();
-    //     }
-    // }
 }
 
 const sectionStyle = {
