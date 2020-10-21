@@ -9,14 +9,12 @@ describe('Header', () => {
   it('displays the h1 in the header', () => {
     render(<Router><Header /></Router>);
   
-  let headerText = screen.getByText("Rancid Tomatillos");
-  expect(headerText).toBeInTheDocument();
+  expect(screen.getByText("Rancid Tomatillos")).toBeInTheDocument();
   });
 
   it('displays the login message', () => {
     render(<Router><Header /></Router>);
   
-  let login = screen.getByText("Login");
-  expect(login).toBeInTheDocument();
+  expect(screen.getByText("Login")).toBeInTheDocument();
   });
 })

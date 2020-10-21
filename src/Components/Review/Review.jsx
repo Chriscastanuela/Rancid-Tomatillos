@@ -4,7 +4,7 @@ export default class Review extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      ratings: []
+      // ratings: []
     }
   }
 
@@ -21,8 +21,6 @@ export default class Review extends Component {
   updateRatings (movieId) {
     
     let newRatings = this.state.ratings.filter(i => {
-      console.log("Review -> updateRatings -> i.id", movieId)
-      console.log("Review -> updateRatings -> i.id", i.id)
       return i.movie_id != movieId
     })
     this.setState({ ratings: newRatings })
@@ -41,7 +39,7 @@ export default class Review extends Component {
     }
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/users/${this.props.user.id}/ratings/${theMovieRating.id}`, thePost)
       .then(res => console.log(res));
-    this.updateRatings(id)
+      this.updateRatings(id)
   }
 
   render() {
@@ -78,11 +76,7 @@ export default class Review extends Component {
                     return i.movie_id == index.id
                   })
                 }
-
                 theSecondEmoji = theEmojis[Math.floor(theMovie.average_rating)]
-
-                console.log(this.state.ratings)
-
                 return  (
                   <span style={spanStyle}>
                     <h4 style={{margin: 3}}>{theMovie.title}</h4>

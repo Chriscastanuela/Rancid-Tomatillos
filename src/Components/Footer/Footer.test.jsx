@@ -7,8 +7,8 @@ describe('Footer', () => {
    it('displays the h1 in the footer', () => {
     render(<Footer />);
   
-    let rancidElement = screen.getByText("Rancid");
-    expect(rancidElement).toBeInTheDocument();
+    // let rancidElement = screen.getByText("Rancid");
+    expect(screen.getByText("Rancid")).toBeInTheDocument();
     });
 
 });
