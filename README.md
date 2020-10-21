@@ -21,6 +21,7 @@
 
 # Final Version
 ![gif of website](https://user-images.githubusercontent.com/62910433/96667368-32f41f80-1316-11eb-9a13-2e7dac9b6f75.gif)
+![gif of website 2](https://user-images.githubusercontent.com/62910433/96718427-3f539900-1365-11eb-9bec-6fcfdbcc9529.gif)
 # Successes
 
 <a name="successes"></a>
@@ -48,7 +49,7 @@
 [Back to Main](#mainContents)
 <ul>
     <li>Caleb - My favorite part of this project was finally figuring out 'data down actions up.' It felt like the moment that I figured out the preservation of the 'data model' in mod1. Jk the real best part of this project was hanging out with Chris again
-    <li>Chris - It felt great to get more familiar with React, I feel like if I could do this project over again knowing what I know now it would be even better.
+    <li>Chris - It felt great to get more familiar with React, I feel like if I could do this project over again knowing what I know now it would be even better. Working with Caleb was a great bonus
 </ul>
 
 ### Links to the Authors
