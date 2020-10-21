@@ -24,11 +24,9 @@ export class App extends Component {
   }
   updateUserLists = (newState) => {
     this.setState({userLists: newState});
-    console.log(this.state.userLists);
   }
   updateUserRatings = (newState) => {
     this.setState({userRatings: newState});
-    console.log(this.state.userLists);
   }
   render() {
     return (

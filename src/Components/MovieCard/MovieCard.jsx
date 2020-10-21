@@ -16,6 +16,7 @@ export class MovieCard extends Component {
       <Link to={`/movies/${this.state.movie.id}`} style={divStyle}>
         <img src={this.state.movie.poster_path} alt="Movie Poster" style={imgStyle}/>
         <div style={bodyStyle}>
+          <h4 style={titleStyle}>{this.props.movie.title}</h4>
         </div>
       </Link>
     )
@@ -23,12 +24,14 @@ export class MovieCard extends Component {
 }
 
 let divStyle = { 
-  height: '450px',
+  height: '500px',
   width: '282px',
   justifySelf: 'Center',
   alignSelf: 'center',
   marginBottom: '20px',
   boxShadow: '15px 20px 40px #888888',
+  fontFamily: 'Permanent Marker, cursive',
+  textDecoration: 'none',
 }
 
 let imgStyle = {
@@ -46,6 +49,14 @@ const bodyStyle = {
   margin: 0,
   justifySelf: 'center',
   alignSelf: 'center',
+}
+
+let titleStyle = {
+  fontWeight: 'bold',
+  gridColumn: '2',
+  cursor: 'pointer',
+  textDecoration: 'none',
+  color: 'black',
 }
 
 export default MovieCard

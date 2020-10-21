@@ -9,7 +9,6 @@ export class MoviePage extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props)
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.movieId}`)
     .then(res => res.json())
     .then(res => this.setState({ movie: res.movie }))
@@ -33,13 +32,12 @@ export class MoviePage extends Component {
       )
     }
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/users/${this.props.userId}/ratings`, thePost)
-      .then(res =>  console.log(res))  
       .then(res => res.json())
-      .then(res =>  console.log(res))  
       .catch(err => console.log(err));
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/users/${this.props.userId}/ratings`)
       .then(response => response.json())
       .then(res => this.props.updateUserRatings([...res.ratings]))
+      .then(res => alert('Rating Submitted Successfully'))
   }
 
   render() {

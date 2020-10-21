@@ -11,7 +11,6 @@ export default class Login extends Component {
             failedLogin: '',
         }
     }
-    //name: 'Claire', email: 'claire@turing.io', password: 'qwer1234'
     sendLogin() {
         let thePost = {
             method: 'POST',

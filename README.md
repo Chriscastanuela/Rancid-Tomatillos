@@ -1,68 +1,62 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<a name="mainContents"></a>
+# Tic-Tac-Toe
+> A js project by Caleb Cyphers Chris Castenuela
 
-## Available Scripts
+# Contents 
 
-In the project directory, you can run:
+* [About](#about)
+* [Successes](#successes)
+* [What I Enjoyed the Most](#wwetm)
+* [Link to the Author](#ltta)
 
-### `npm start`
+# About 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<a name="about"></a>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[Back to Main](#mainContents)
+<ul>
+    <li>The Rancid Tomatillos project is a paired project that consisted of utilizing React to create a website that resembles Rotten Tomatoes in functionality.</li>
+    <li>We were given full creative control with the project's design.</li>
+</ul>
 
-### `npm test`
+# Final Version
+![gif of website](https://user-images.githubusercontent.com/62910433/96667368-32f41f80-1316-11eb-9a13-2e7dac9b6f75.gif)
+# Successes
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<a name="successes"></a>
 
-### `npm run build`
+[Back to Main](#mainContents)
+<ul>
+    <li>The site is able to do the following:
+        <ul>
+            <li>Display: 
+                <ul>
+                    <li>Lists of different movie categories: Most recent, highest rated, lowest rated, all movies, and user ratings (upon logging in).</li>
+                    <li>A list of movie posters.</li>
+                    <li>Any movie's details: overview, tagline, revenue, images, budget, etc. upon clicking on that movie</li>
+                </ul>
+            <li>Log the user in.</li>
+            <li>Sumbit a rating for a movie while logged in.</li>
+            <li>Delete a rating for a movie while logged in.</li>
+        </ul>
+</ul>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# What We Enjoyed The Most
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+<a name="wwetm"></a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[Back to Main](#mainContents)
+<ul>
+    <li>Caleb - My favorite part of this project was finally figuring out 'data down actions up.' It felt like the moment that I figured out the preservation of the 'data model' in mod1. Jk the real best part of this project was hanging out with Chris again
+    <li>Chris - It felt great to get more familiar with React, I feel like if I could do this project over again knowing what I know now it would be even better.
+</ul>
 
-### `npm run eject`
+### Links to the Authors
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<a name="ltta"></a>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[Back to Main](#mainContents)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+> Caleb Cyphers [here](https://github.com/Chriscastanuela?tab=repositories)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+> Christopher Castanuela [here](https://github.com/Chriscastanuela?tab=repositories)
