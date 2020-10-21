@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/http//Chriscastanuela.github.io/Rancid-Tomatillos/static/css/main.02151bf1.chunk.css",
+    "main.js": "/http//Chriscastanuela.github.io/Rancid-Tomatillos/static/js/main.cb84dc91.chunk.js",
+    "main.js.map": "/http//Chriscastanuela.github.io/Rancid-Tomatillos/static/js/main.cb84dc91.chunk.js.map",
+    "runtime-main.js": "/http//Chriscastanuela.github.io/Rancid-Tomatillos/static/js/runtime-main.3540658d.js",
+    "runtime-main.js.map": "/http//Chriscastanuela.github.io/Rancid-Tomatillos/static/js/runtime-main.3540658d.js.map",
+    "static/js/2.faec2a1a.chunk.js": "/http//Chriscastanuela.github.io/Rancid-Tomatillos/static/js/2.faec2a1a.chunk.js",
+    "static/js/2.faec2a1a.chunk.js.map": "/http//Chriscastanuela.github.io/Rancid-Tomatillos/static/js/2.faec2a1a.chunk.js.map",
+    "index.html": "/http//Chriscastanuela.github.io/Rancid-Tomatillos/index.html",
+    "precache-manifest.5029f887ceb76fbd0edd1319f59be455.js": "/http//Chriscastanuela.github.io/Rancid-Tomatillos/precache-manifest.5029f887ceb76fbd0edd1319f59be455.js",
+    "service-worker.js": "/http//Chriscastanuela.github.io/Rancid-Tomatillos/service-worker.js",
+    "static/css/main.02151bf1.chunk.css.map": "/http//Chriscastanuela.github.io/Rancid-Tomatillos/static/css/main.02151bf1.chunk.css.map",
+    "static/js/2.faec2a1a.chunk.js.LICENSE.txt": "/http//Chriscastanuela.github.io/Rancid-Tomatillos/static/js/2.faec2a1a.chunk.js.LICENSE.txt",
+    "static/media/user.png": "/http//Chriscastanuela.github.io/Rancid-Tomatillos/static/media/user.da31ec9b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3540658d.js",
+    "static/js/2.faec2a1a.chunk.js",
+    "static/css/main.02151bf1.chunk.css",
+    "static/js/main.cb84dc91.chunk.js"
+  ]
+}
