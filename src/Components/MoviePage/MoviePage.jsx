@@ -37,6 +37,7 @@ export class MoviePage extends Component {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/users/${this.props.userId}/ratings`)
       .then(response => response.json())
       .then(res => this.props.updateUserRatings([...res.ratings]))
+      .then(res => alert('Rating Submitted Successfully'))
   }
 
   render() {
