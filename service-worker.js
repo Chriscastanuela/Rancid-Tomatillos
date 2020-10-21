@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/http//Chriscastanuela.github.io/Rancid-Tomatillos/precache-manifest.5029f887ceb76fbd0edd1319f59be455.js"
+  "/http//chriscastanuela.github.io/rancid-tomatillos/precache-manifest.bb798ed1748c69a01d903dc8fd45ff1a.js"
 );
 
 self.addEventListener('message', (event) => {
@@ -33,7 +33,7 @@ workbox.core.clientsClaim();
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/http//Chriscastanuela.github.io/Rancid-Tomatillos/index.html"), {
+workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/http//chriscastanuela.github.io/rancid-tomatillos/index.html"), {
   
   blacklist: [/^\/_/,/\/[^/?]+\.[^/]+$/],
 });
