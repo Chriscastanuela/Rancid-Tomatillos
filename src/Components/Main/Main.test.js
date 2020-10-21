@@ -6,6 +6,11 @@ import '@testing-library/jest-dom';
 describe('Main', () => {
    
     it('Should work', () => {
-      expect(true).toBeTruthy()
+      let user = {
+        id: 0
+      }
+      render(<Main user={user}></Main>)
+      expect(screen.getByText('Categories')).toBeInTheDocument();
+      expect(screen.getByText('Movie Details')).toBeInTheDocument();
     })
 })
