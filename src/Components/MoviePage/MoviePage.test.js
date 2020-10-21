@@ -40,4 +40,18 @@ describe('MoviePage', () => {
 
       expect(moviePoster).toBeInTheDocument();
     })
+
+    it("Should display the movie's Tagline, date and rating and overview", () => {
+      render(<MoviePage userId={data.user.id} movieId={"528085"} updateUserRatings={updateUserRatings} user={data.user} isLoggedIn={data.isLoggedIn} theUpdater={theUpdater} updateUserLists={updateUserLists} userLists={data.userLists} userRatings={data.userRatings}></MoviePage>)
+
+      let movieTagline = screen.getByText(/Tagline:/i)
+      let movieRating = screen.getByText(/Rating:/i)
+      let movieDate = screen.getByText(/Release date:/i)
+      let movieOverview = screen.getByText(/Overview:/i)
+
+      expect(movieTagline).toBeInTheDocument();
+      expect(movieDate).toBeInTheDocument();
+      expect(movieOverview).toBeInTheDocument();
+      expect(movieRating).toBeInTheDocument();
+    })
 })

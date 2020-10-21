@@ -40,12 +40,9 @@ describe('List', () => {
                 list={recentMovies}
               />);
 
-      let afterWeCollided = screen.getByText('After We Collided')
-      expect(afterWeCollided).toBeInTheDocument();
-      let twentySixtySeven = screen.getByText('2067')
-      expect(twentySixtySeven).toBeInTheDocument();
-      let antebellum = screen.getByText('Antebellum')
-      expect(antebellum).toBeInTheDocument();
+      expect(screen.getByText('After We Collided')).toBeInTheDocument();
+      expect(screen.getByText('2067')).toBeInTheDocument();
+      expect(screen.getByText('Antebellum')).toBeInTheDocument();
     })
 
     it('Should render average ratings', () => {
@@ -55,12 +52,9 @@ describe('List', () => {
                 list={recentMovies}
               />);
 
-      let five = screen.getByText('Rating: 🍅🍅🍅🍅🍅')
-      expect(five).toBeInTheDocument();
-      let six = screen.getByText('Rating: 🍅🍅🍅🍅🍅🍅')
-      expect(six).toBeInTheDocument();
-      let four = screen.getByText('Rating: 🍅🍅🍅🍅')
-      expect(four).toBeInTheDocument();
+      expect(screen.getByText('Rating: 🍅🍅🍅🍅🍅')).toBeInTheDocument();
+      expect(screen.getByText('Rating: 🍅🍅🍅🍅🍅🍅')).toBeInTheDocument();
+      expect(screen.getByText('Rating: 🍅🍅🍅🍅')).toBeInTheDocument();
     })
 
     it('Should render the `header` prop', () => {
@@ -70,7 +64,6 @@ describe('List', () => {
                 list={recentMovies}
               />);
 
-      let newReleases = screen.getByText('New Releases')
-      expect(newReleases).toBeInTheDocument();
+      expect(screen.getByText('New Releases')).toBeInTheDocument();
     })
 })
