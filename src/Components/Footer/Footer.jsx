@@ -6,6 +6,7 @@ export default function Footer() {
             <h1 style={headerStyle}>Rancid</h1>
         </section>
         //hello
+        //hey there
     )
 }
 
