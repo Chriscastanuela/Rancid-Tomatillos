@@ -5,6 +5,7 @@ export default function Footer() {
         <section style={sectionStyle}>
             <h1 style={headerStyle}>Rancid</h1>
         </section>
+        //hello
     )
 }
 
